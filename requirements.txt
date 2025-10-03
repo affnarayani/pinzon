@@ -2,3 +2,4 @@ selenium
 beautifulsoup4
 colorama
 webdriver-manager
+selenium-stealth

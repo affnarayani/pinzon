@@ -11,6 +11,7 @@ import traceback
 import re
 import html
 from colorama import Fore, Style, init
+from selenium_stealth import stealth
 
 # Initialize colorama
 init(autoreset=True)
@@ -156,16 +157,23 @@ def _scrape_single_product_details(driver, product):
     
     # Scrape product details
     details = []
-    for i in range(1, 20): # Iterate through potential list items
-        try:
-            xpath = f"/html/body/div[2]/div/div/div[5]/div[4]/div[49]/div/ul/li[{i}]/span"
-            detail_element = driver.find_element(By.XPATH, xpath)
-            detail_text = html.unescape(detail_element.text.strip()) # Handle special characters
-            if detail_text:
-                details.append(f"<p>{detail_text}</p>")
-        except Exception:
-            # Break if no more list items are found
-            break
+    try:
+        # Wait for the product details section to be present
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, "/html/body/div[2]/div/div/div[5]/div[4]/div[49]/div/ul"))
+        )
+        for i in range(1, 20): # Iterate through potential list items
+            try:
+                xpath = f"/html/body/div[2]/div/div/div[5]/div[4]/div[49]/div/ul/li[{i}]/span"
+                detail_element = driver.find_element(By.XPATH, xpath)
+                detail_text = html.unescape(detail_element.text.strip()) # Handle special characters
+                if detail_text:
+                    details.append(f"<p>{detail_text}</p>")
+            except Exception:
+                # Break if no more list items are found
+                break
+    except Exception as e:
+        print(f"{Fore.YELLOW}  Could not find product details section: {e}{Style.RESET_ALL}")
     
     if details:
         product_details_str = "\n".join(details)
@@ -212,6 +220,9 @@ def scrape_product_details():
         chrome_options.add_argument("--headless")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--disable-blink-features=AutomationControlled") # Added for stealth
+    chrome_options.add_argument("--disable-gpu") # Added for headless stability
+    chrome_options.add_argument("--window-size=1920,1080") # Set a consistent window size
     chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
     chrome_options.add_argument("--start-maximized") # Maximize browser window
     
@@ -219,6 +230,15 @@ def scrape_product_details():
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=chrome_options)
     
+    stealth(driver,
+            languages=["en-US", "en"],
+            vendor="Google Inc.",
+            platform="Win32",
+            webgl_vendor="Intel Inc.",
+            renderer="Intel Iris OpenGL Engine",
+            fix_hairline=True,
+            )
+
     try:
         for i, product in enumerate(products_data):
             print(f"\n{Fore.WHITE}--- Processing product {i+1}/{len(products_data)} ---{Style.RESET_ALL}")
