@@ -16,7 +16,7 @@ from colorama import Fore, Style, init
 init(autoreset=True)
 
 product_file = "mobile_phones.json"
-headless = True
+headless = False
 
 def get_main_image_element_safely(driver):
     """Helper function to safely get the main image element."""
@@ -114,6 +114,23 @@ def _scrape_single_product_details(driver, product):
     for i, thumbnail in enumerate(thumbnail_elements):
         if len(image_urls) >= 5:
             break
+
+        # Check if the thumbnail contains a video indicator
+        is_video = False
+        try:
+            # Look for common video indicators like a play button icon or a video tag
+            # This might need adjustment based on the actual HTML structure of video thumbnails
+            if thumbnail.find_elements(By.CSS_SELECTOR, ".video-play-icon, .a-video-play-icon, video"):
+                is_video = True
+            # Also check for specific classes that might indicate a video thumbnail
+            if "video" in thumbnail.get_attribute("class").lower():
+                is_video = True
+        except Exception:
+            pass # Ignore errors if elements are not found
+
+        if is_video:
+            print(f"{Fore.BLUE}  Skipping video thumbnail {i+1}.{Style.RESET_ALL}")
+            continue
 
         try:
             # Wait for the thumbnail to be clickable
@@ -224,12 +241,15 @@ def scrape_product_details():
                 
     except KeyboardInterrupt:
         print(f"\n{Fore.RED}KeyboardInterrupt detected. Exiting gracefully...{Style.RESET_ALL}")
+    except webdriver.common.exceptions.NoSuchWindowException:
+        print(f"{Fore.RED}Browser window closed unexpectedly. Exiting gracefully...{Style.RESET_ALL}")
     except Exception as e:
         print(f"{Fore.RED}An unexpected error occurred: {e}{Style.RESET_ALL}")
         traceback.print_exc()
     finally:
-        driver.quit() # Close the browser after scraping all products
-        print(f"{Fore.CYAN}Browser closed.{Style.RESET_ALL}")
+        if driver:
+            driver.quit() # Close the browser after scraping all products
+            print(f"{Fore.CYAN}Browser closed.{Style.RESET_ALL}")
 
 if __name__ == "__main__":
     scrape_product_details()
