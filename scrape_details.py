@@ -179,7 +179,8 @@ def _scrape_single_product_details(driver, product):
     for key, value in product.items():
         new_product[key] = value
         if key == "product_url":
-            new_product["product_details"] = product_details_str
+            if product_details_str: # Only add if product_details_str is not empty
+                new_product["product_details"] = product_details_str
             # Add image_urls after product_details
             for i, url in enumerate(list(image_urls)[:5]): # Take up to 5 unique URLs
                 new_product[f"image_url_{i+1}"] = url
