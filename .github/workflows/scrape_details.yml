@@ -5,6 +5,10 @@ on:
   schedule:
     - cron: '30 21 * * *' # Runs everyday at 3 AM IST (21:30 UTC)
 
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
