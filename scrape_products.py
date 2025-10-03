@@ -191,6 +191,8 @@ def main():
             page_num += 1
             time.sleep(2) # Be polite and avoid hammering the server
 
+    except KeyboardInterrupt:
+        print("\nScraping interrupted by user (KeyboardInterrupt). Saving current progress and exiting.")
     except Exception as e:
         print(f"An error occurred: {e}")
     finally:
