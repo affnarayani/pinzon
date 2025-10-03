@@ -170,11 +170,11 @@ def _scrape_single_product_details(driver, product):
             break
         else:
             print(f"{Fore.YELLOW}  Only found {len(image_urls)} images on attempt {attempt + 1}. Checking for 'Continue shopping' button...{Style.RESET_ALL}")
-            if handle_continue_shopping_button(driver):
+            if attempt == 0 and handle_continue_shopping_button(driver):
                 print(f"{Fore.YELLOW}  Retrying image scraping after clicking 'Continue shopping' button.{Style.RESET_ALL}")
                 continue # Retry current attempt after clicking button
             else:
-                print(f"{Fore.YELLOW}  No 'Continue shopping' button found. Refreshing page for images...{Style.RESET_ALL}")
+                print(f"{Fore.YELLOW}  No 'Continue shopping' button found or not first attempt. Refreshing page for images...{Style.RESET_ALL}")
                 driver.refresh()
                 time.sleep(5)
     
@@ -209,17 +209,17 @@ def _scrape_single_product_details(driver, product):
                 break # Break out of retry loop if successful
             else:
                 print(f"{Fore.YELLOW}  No product details found on attempt {attempt + 1} for {product_name}. Checking for 'Continue shopping' button...{Style.RESET_ALL}")
-                if handle_continue_shopping_button(driver):
+                if attempt == 0 and handle_continue_shopping_button(driver):
                     print(f"{Fore.YELLOW}  Retrying product details scraping after clicking 'Continue shopping' button.{Style.RESET_ALL}")
                     continue # Retry current attempt after clicking button
                 else:
-                    print(f"{Fore.YELLOW}  No 'Continue shopping' button found. Refreshing page...{Style.RESET_ALL}")
+                    print(f"{Fore.YELLOW}  No 'Continue shopping' button found or not first attempt. Refreshing page...{Style.RESET_ALL}")
                     driver.refresh()
                     time.sleep(5) # Wait after refresh
         except Exception as e:
             print(f"{Fore.YELLOW}  Could not find product details section on attempt {attempt + 1}: {e}{Style.RESET_ALL}")
             if attempt < 4: # Don't refresh on the last attempt if it failed
-                if handle_continue_shopping_button(driver):
+                if attempt == 0 and handle_continue_shopping_button(driver):
                     print(f"{Fore.YELLOW}  Retrying product details scraping after clicking 'Continue shopping' button.{Style.RESET_ALL}")
                     continue # Retry current attempt after clicking button
                 else:
