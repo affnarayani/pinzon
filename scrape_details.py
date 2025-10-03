@@ -16,7 +16,7 @@ from colorama import Fore, Style, init
 init(autoreset=True)
 
 product_file = "mobile_phones.json"
-headless = False
+headless = True
 
 def get_main_image_element_safely(driver):
     """Helper function to safely get the main image element."""
