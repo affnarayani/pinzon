@@ -92,6 +92,18 @@ def _scrape_single_product_details(driver, product):
     driver.get(product_url)
     time.sleep(3) # Increased initial sleep time
 
+    def handle_continue_shopping_button(driver_instance):
+        try:
+            continue_button = WebDriverWait(driver_instance, 5).until(
+                EC.element_to_be_clickable((By.XPATH, "//button[@type='submit' and contains(text(), 'Continue shopping')]"))
+            )
+            print(f"{Fore.YELLOW}  'Continue shopping' button found. Clicking it...{Style.RESET_ALL}")
+            continue_button.click()
+            time.sleep(3) # Wait for the page to load after clicking
+            return True
+        except Exception:
+            return False
+
     image_urls = set() # Use a set to store unique URLs
 
     # Initialize thumbnail_elements to an empty list
@@ -109,78 +121,113 @@ def _scrape_single_product_details(driver, product):
     # Define the allowed image URL endings
     allowed_endings = ("SX679_.jpg")
 
-    # Initial image extraction
-    extract_image_urls_from_page(driver, image_urls, allowed_endings)
+    # Image extraction with retry mechanism
+    for attempt in range(5):
+        print(f"{Fore.CYAN}  Attempting image extraction (Attempt {attempt + 1})...{Style.RESET_ALL}")
+        image_urls.clear() # Clear previous attempts' URLs
+        
+        # Initial image extraction
+        extract_image_urls_from_page(driver, image_urls, allowed_endings)
 
-    for i, thumbnail in enumerate(thumbnail_elements):
-        if len(image_urls) >= 5:
-            break
-
-        # Check if the thumbnail contains a video indicator
-        is_video = False
-        try:
-            # Look for common video indicators like a play button icon or a video tag
-            # This might need adjustment based on the actual HTML structure of video thumbnails
-            if thumbnail.find_elements(By.CSS_SELECTOR, ".video-play-icon, .a-video-play-icon, video"):
-                is_video = True
-            # Also check for specific classes that might indicate a video thumbnail
-            if "video" in thumbnail.get_attribute("class").lower():
-                is_video = True
-        except Exception:
-            pass # Ignore errors if elements are not found
-
-        if is_video:
-            print(f"{Fore.BLUE}  Skipping video thumbnail {i+1}.{Style.RESET_ALL}")
-            continue
-
-        try:
-            # Wait for the thumbnail to be clickable
-            clickable_thumbnail = WebDriverWait(driver, 10).until(
-                EC.element_to_be_clickable(thumbnail)
-            )
-            # Try clicking directly, if it fails, use JavaScript click
-            try:
-                clickable_thumbnail.click()
-            except Exception:
-                driver.execute_script("arguments[0].click();", clickable_thumbnail)
-            
-            time.sleep(2) # Give some time for the main image to load after click
-
-            # Re-extract all image URLs after clicking the thumbnail
-            # This will re-scan all XPaths and main image
-            extract_image_urls_from_page(driver, image_urls, allowed_endings)
-
-        except Exception as e:
-            print(f"{Fore.YELLOW}  General error during thumbnail click or image extraction for thumbnail {i+1}: {e}{Style.RESET_ALL}")
-            traceback.print_exc() # Print full traceback for debugging
-            continue
-    
-    # Scrape product details
-    details = []
-    try:
-        # Wait for the product details section to be present
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "/html/body/div[2]/div/div/div[5]/div[4]/div[49]/div/ul"))
-        )
-        for i in range(1, 20): # Iterate through potential list items
-            try:
-                xpath = f"/html/body/div[2]/div/div/div[5]/div[4]/div[49]/div/ul/li[{i}]/span"
-                detail_element = driver.find_element(By.XPATH, xpath)
-                detail_text = html.unescape(detail_element.text.strip()) # Handle special characters
-                if detail_text:
-                    details.append(f"<p>{detail_text}</p>")
-            except Exception:
-                # Break if no more list items are found
+        for i, thumbnail in enumerate(thumbnail_elements):
+            if len(image_urls) >= 5:
                 break
-    except Exception as e:
-        print(f"{Fore.YELLOW}  Could not find product details section: {e}{Style.RESET_ALL}")
+
+            # Check if the thumbnail contains a video indicator
+            is_video = False
+            try:
+                if thumbnail.find_elements(By.CSS_SELECTOR, ".video-play-icon, .a-video-play-icon, video"):
+                    is_video = True
+                if "video" in thumbnail.get_attribute("class").lower():
+                    is_video = True
+            except Exception:
+                pass
+
+            if is_video:
+                print(f"{Fore.BLUE}  Skipping video thumbnail {i+1}.{Style.RESET_ALL}")
+                continue
+
+            try:
+                clickable_thumbnail = WebDriverWait(driver, 10).until(
+                    EC.element_to_be_clickable(thumbnail)
+                )
+                try:
+                    clickable_thumbnail.click()
+                except Exception:
+                    driver.execute_script("arguments[0].click();", clickable_thumbnail)
+                
+                time.sleep(2)
+
+                extract_image_urls_from_page(driver, image_urls, allowed_endings)
+
+            except Exception as e:
+                print(f"{Fore.YELLOW}  Error during thumbnail click or image extraction for thumbnail {i+1}: {e}{Style.RESET_ALL}")
+                # traceback.print_exc() # Suppress stacktrace as requested
+                continue
+        
+        if len(image_urls) >= 5:
+            print(f"{Fore.GREEN}  Successfully scraped {len(image_urls)} images (Attempt {attempt + 1}){Style.RESET_ALL}")
+            break
+        else:
+            print(f"{Fore.YELLOW}  Only found {len(image_urls)} images on attempt {attempt + 1}. Checking for 'Continue shopping' button...{Style.RESET_ALL}")
+            if handle_continue_shopping_button(driver):
+                print(f"{Fore.YELLOW}  Retrying image scraping after clicking 'Continue shopping' button.{Style.RESET_ALL}")
+                continue # Retry current attempt after clicking button
+            else:
+                print(f"{Fore.YELLOW}  No 'Continue shopping' button found. Refreshing page for images...{Style.RESET_ALL}")
+                driver.refresh()
+                time.sleep(5)
     
-    if details:
-        product_details_str = "\n".join(details)
-        print(f"{Fore.MAGENTA}  Scraped product details for {product_name}{Style.RESET_ALL}")
-    else:
-        product_details_str = ""
-        print(f"{Fore.YELLOW}  No product details found for {product_name}{Style.RESET_ALL}")
+    if len(image_urls) < 5:
+        print(f"{Fore.YELLOW}  Could not scrape 5 images after multiple attempts for {product_name}. Found {len(image_urls)}.{Style.RESET_ALL}")
+
+    # Scrape product details with retry mechanism
+    details = []
+    product_details_str = ""
+    for attempt in range(5): # Retry up to 5 times
+        try:
+            # Wait for the product details section to be present
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, "/html/body/div[2]/div/div/div[5]/div[4]/div[49]/div/ul"))
+            )
+            temp_details = []
+            for i in range(1, 20): # Iterate through potential list items
+                try:
+                    xpath = f"/html/body/div[2]/div/div/div[5]/div[4]/div[49]/div/ul/li[{i}]/span"
+                    detail_element = driver.find_element(By.XPATH, xpath)
+                    detail_text = html.unescape(detail_element.text.strip()) # Handle special characters
+                    if detail_text:
+                        temp_details.append(f"<p>{detail_text}</p>")
+                except Exception:
+                    # Break if no more list items are found
+                    break
+            
+            if temp_details:
+                details = temp_details
+                product_details_str = "\n".join(details)
+                print(f"{Fore.MAGENTA}  Scraped product details for {product_name} (Attempt {attempt + 1}){Style.RESET_ALL}")
+                break # Break out of retry loop if successful
+            else:
+                print(f"{Fore.YELLOW}  No product details found on attempt {attempt + 1} for {product_name}. Checking for 'Continue shopping' button...{Style.RESET_ALL}")
+                if handle_continue_shopping_button(driver):
+                    print(f"{Fore.YELLOW}  Retrying product details scraping after clicking 'Continue shopping' button.{Style.RESET_ALL}")
+                    continue # Retry current attempt after clicking button
+                else:
+                    print(f"{Fore.YELLOW}  No 'Continue shopping' button found. Refreshing page...{Style.RESET_ALL}")
+                    driver.refresh()
+                    time.sleep(5) # Wait after refresh
+        except Exception as e:
+            print(f"{Fore.YELLOW}  Could not find product details section on attempt {attempt + 1}: {e}{Style.RESET_ALL}")
+            if attempt < 4: # Don't refresh on the last attempt if it failed
+                if handle_continue_shopping_button(driver):
+                    print(f"{Fore.YELLOW}  Retrying product details scraping after clicking 'Continue shopping' button.{Style.RESET_ALL}")
+                    continue # Retry current attempt after clicking button
+                else:
+                    driver.refresh()
+                    time.sleep(5) # Wait after refresh
+    
+    if not details:
+        print(f"{Fore.YELLOW}  No product details found for {product_name} after multiple attempts.{Style.RESET_ALL}")
 
     # Create a new dictionary to reorder keys
     new_product = {}
@@ -266,7 +313,7 @@ def scrape_product_details():
         print(f"{Fore.RED}Browser window closed unexpectedly. Exiting gracefully...{Style.RESET_ALL}")
     except Exception as e:
         print(f"{Fore.RED}An unexpected error occurred: {e}{Style.RESET_ALL}")
-        traceback.print_exc()
+        # traceback.print_exc() # Suppress stacktrace as requested
     finally:
         if driver:
             driver.quit() # Close the browser after scraping all products
