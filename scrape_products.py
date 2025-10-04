@@ -9,10 +9,13 @@ from bs4 import BeautifulSoup
 import os
 import shutil # Import shutil for rmtree
 import time
+import random # Import random for random delays
+from selenium_stealth import stealth
+from webdriver_manager.chrome import ChromeDriverManager
 
 # --- Configuration Variables ---
 product = "mobile_phones"  # Manually set by developer, must match key in product_links.json
-headless = True           # Toggle for headless/headful browser mode
+headless = False           # Toggle for headless/headful browser mode
 
 # --- Constants ---
 PRODUCT_LINKS_FILE = "product_links.json"
@@ -45,20 +48,141 @@ def load_product_links(file_path, product_key):
 def setup_driver(headless_mode):
     """Sets up and returns a Selenium WebDriver instance."""
     chrome_options = Options()
-    if headless_mode:
-        chrome_options.add_argument("--headless")
+    # Common arguments for stealth and stability
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--disable-blink-features=AutomationControlled")
+    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--window-size=1920,1080")
     chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
-    chrome_options.add_argument("--start-maximized") # Open browser in maximized mode
+    chrome_options.add_argument("--start-maximized")
+    chrome_options.add_argument("--disable-extensions")
+    chrome_options.add_argument("--disable-features=site-per-process")
+    chrome_options.add_argument("--disable-popup-blocking")
+    chrome_options.add_argument("--profile-directory=Default")
+    chrome_options.add_argument("--incognito")
+    chrome_options.add_argument("--disable-background-networking")
+    chrome_options.add_argument("--enable-automation")
+    chrome_options.add_argument("--disable-background-timer-throttling")
+    chrome_options.add_argument("--disable-backgrounding-occluded-windows")
+    chrome_options.add_argument("--disable-breakpad")
+    chrome_options.add_argument("--disable-client-side-phishing-detection")
+    chrome_options.add_argument("--disable-component-update")
+    chrome_options.add_argument("--disable-default-apps")
+    chrome_options.add_argument("--disable-hang-monitor")
+    chrome_options.add_argument("--disable-ipc-flooding-protection")
+    chrome_options.add_argument("--disable-notifications")
+    chrome_options.add_argument("--disable-offer-store-unmasked-wallet-cards")
+    chrome_options.add_argument("--disable-print-preview")
+    chrome_options.add_argument("--disable-prompt-on-repost")
+    chrome_options.add_argument("--disable-renderer-backgrounding")
+    chrome_options.add_argument("--disable-sync")
+    chrome_options.add_argument("--hide-scrollbars")
+    chrome_options.add_argument("--metrics-recording-only")
+    chrome_options.add_argument("--mute-audio")
+    chrome_options.add_argument("--no-first-run")
+    chrome_options.add_argument("--safebrowsing-disable-auto-update")
+    chrome_options.add_argument("--enable-blink-features=IdleDetection")
 
-    # Assuming chromedriver is in PATH or specify path
-    # service = Service(executable_path="/path/to/chromedriver")
-    driver = webdriver.Chrome(options=chrome_options)
+    if headless_mode:
+        chrome_options.add_argument("--headless=new") # Use new headless mode
+
+    # Setup Chrome driver
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=chrome_options)
+    
+    # Apply stealth settings
+    stealth(driver,
+            languages=["en-US", "en"],
+            vendor="Google Inc.",
+            platform="Win32",
+            webgl_vendor="Intel Inc.",
+            renderer="Intel Iris OpenGL Engine",
+            fix_hairline=True,
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+            app_version="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+            os_cpu="Intel Mac OS X", # Spoofing OS for better stealth
+            device_memory=8, # Spoofing device memory
+            navigator_platform="Win32",
+            navigator_vendor="Google Inc.",
+            navigator_plugins=["Chrome PDF Plugin", "Chrome PDF Viewer"], # Spoofing plugins
+            navigator_mimetypes=["application/pdf", "application/x-google-chrome-pdf"], # Spoofing mimetypes
+            )
+
+    # Execute CDP command to disable automation flags
+    driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
+        "source": """
+            Object.defineProperty(navigator, 'webdriver', {
+                get: () => undefined
+            });
+            Object.defineProperty(navigator, 'plugins', {
+                get: () => [1, 2, 3, 4, 5] // Mimic a few plugins
+            });
+            Object.defineProperty(navigator, 'languages', {
+                get: () => ['en-US', 'en']
+            });
+            Object.defineProperty(navigator, 'deviceMemory', {
+                get: () => 8 // Mimic device memory
+            });
+            Object.defineProperty(navigator, 'maxTouchPoints', {
+                get: () => 0 // Mimic no touch screen
+            });
+            Object.defineProperty(navigator, 'hardwareConcurrency', {
+                get: () => 8 // Mimic CPU cores
+            });
+            window.chrome = {
+                runtime: {},
+                // Add other properties if needed
+            };
+            // Further spoofing for window.outerWidth/innerWidth if necessary
+            // This might require more dynamic adjustments based on actual browser window
+            window.outerWidth = window.innerWidth;
+            window.outerHeight = window.innerHeight;
+        """
+    })
     return driver
+
+def handle_amazon_home_link(driver, current_page_num, base_url):
+    """
+    Checks for the 'Go to the Amazon.in home page to continue shopping' link.
+    If found, clicks it, waits for the home page to load, and then
+    either restarts scraping from page 1 or navigates back to the current page.
+    Returns the page number to continue scraping from.
+    """
+    try:
+        # Look for the link by its text
+        home_link = WebDriverWait(driver, 5).until(
+            EC.presence_of_element_located((By.PARTIAL_LINK_TEXT, "Go to the Amazon.in home page to continue shopping"))
+        )
+        
+        print("Found 'Go to the Amazon.in home page to continue shopping' link. Clicking it.")
+        home_link.click()
+        
+        # Wait for the home page to load
+        WebDriverWait(driver, 10).until(
+            EC.url_contains("amazon.in") # Assuming it navigates to amazon.in home
+        )
+        print("Navigated to Amazon.in home page.")
+
+        # Now, navigate back to the correct product search page
+        target_url = f"{base_url}&page={current_page_num}" if current_page_num > 1 else base_url
+        print(f"Navigating to product search page {current_page_num}: {target_url}")
+        driver.get(target_url)
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.TAG_NAME, 'body'))
+        )
+        print(f"Successfully navigated to product search page {current_page_num}.")
+        return True # Indicate that the link was found and handled
+            
+    except Exception as e:
+        # Link not found or other error, continue as normal
+        # print(f"Amazon home link not found or error during handling: {e}")
+        return False # Indicate that the link was not found or an error occurred
 
 def scrape_page(driver, url):
     """Navigates to a URL, waits for content, and returns page source."""
+    # Add a random delay before navigating to the URL to simulate human behavior
+    time.sleep(random.uniform(1, 3)) # Random delay between 1 and 3 seconds
     driver.get(url)
     # Wait for the page to load dynamically. Adjust the condition as needed.
     # For example, wait for a specific element to be present.
@@ -171,11 +295,25 @@ def main():
 
             html_content = scrape_page(driver, current_url)
 
+            # Check for the "Go to the Amazon.in home page" link
+            # This needs to happen before parsing products, as the link might replace product listings
+            # If the link is found and handled, the page_num might change or the driver navigates.
+            # Check for the "Go to the Amazon.in home page" link
+            link_was_handled = handle_amazon_home_link(driver, page_num, base_url)
+            
+            if link_was_handled:
+                # If the link was handled, the driver is now on the correct product search page.
+                # We need to re-fetch the HTML content from the current driver state.
+                print(f"Amazon home link handled. Re-fetching HTML content from current driver state for page {page_num}.")
+                html_content = driver.page_source
+                no_product_pages_count = 0 # Reset counter as we've navigated and are on a fresh product page
+            
             page_products = parse_products(html_content)
             
             if not page_products:
                 no_product_pages_count += 1
                 print(f"No non-sponsored products found on page {page_num}. Consecutive empty pages: {no_product_pages_count}")
+                time.sleep(180) # Wait for 3 minutes before trying again
                 if no_product_pages_count >= 3:
                     print("No non-sponsored products found on 3 consecutive pages. Exiting program.")
                     break
@@ -189,7 +327,7 @@ def main():
             # Implement a more robust check for next page availability if possible
             # For now, a simple page increment. You might need to check for a "next page" button/link.
             page_num += 1
-            time.sleep(2) # Be polite and avoid hammering the server
+            time.sleep(random.uniform(2, 5)) # Be polite and avoid hammering the server, random delay
 
     except KeyboardInterrupt:
         print("\nScraping interrupted by user (KeyboardInterrupt). Saving current progress and exiting.")

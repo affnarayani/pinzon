@@ -1,35 +1,242 @@
 [
     {
-        "product_name": "realme NARZO 80 Lite 4G (Obsidian Black, 4GB+64GB) | 6300mAh Segment's Biggest Battery | 7.94mm Slim Design | 300% Ultra Volume | Pulse Light: 9 Colors, 5 Glow Modes | Ai Assist",
-        "product_price": "6,598",
-        "product_url": "https://www.amazon.in/realme-Obsidian-6300mAh-Segments-Biggest/dp/B0FG2LPC6K/ref=sr_1_25?dib=eyJ2IjoiMSJ9.myS3KqpgqjFHbGR31VHS2_wLWWQMz7C6yy5ljolNbFqrbkCfEO5PNvuJYlTaTv_lOfIIGmUwfuXMG7Emwa6DYRH5icFOOPH9AIF4s_nBby-jE2JdoBSpTzsl7jDtvggZEsfCRLNSYH5yT5_5IswvXM7hDWjyPzFBboQE_X9vZiTonxOM0Z85dWZHJiy-vwwDkeD9XrUGE8G6iWiK6fpUFRNYDhggGsn78g7pv_Qb1zY0sKdlFR1jgpYBuSQGb5ftuHUmWzS3BhyFUeqvcE0FZ_4m1woTL0Fsu4UKvV0I7bQ.ROpxpv8VdWinGlETCsQq4Zi95a0fZ2FEmZn_-ykN39s&dib_tag=se&qid=1759512866&s=electronics&sr=1-25",
-        "product_details": "<p>6300mAh Massive Battery: Stay powered all day with a long-lasting battery built for nonstop performance.</p>\n<p>7.94mm Slim Design: Sleek enough for your pocket. Light enough for all-day carry.</p>\n<p>Pulse Light — Lighting Up Every Moment: Supports 9 colors and 5 customizable glow modes that light up for calls, messages, app notifications, battery status, charging, photo countdown, and music rhythm.</p>\n<p>300% Ultra Volume: Enjoy triple the sound for an immersive experience, without any unwanted noise.</p>\n<p>IP54 Water & Dust Resistance: Built to stay protected through dust, spills, and everyday messes.</p>\n<p>Smart AI Assist: AI-powered features that make your everyday phone use smarter and smoother.</p>",
-        "image_url_1": "https://m.media-amazon.com/images/I/81oxfhHd5XL._SX679_.jpg",
-        "image_url_2": "https://m.media-amazon.com/images/I/71uxJcDBh7L._SX679_.jpg",
-        "image_url_3": "https://m.media-amazon.com/images/I/61TbnW+ZOXL._SX679_.jpg",
-        "image_url_4": "https://m.media-amazon.com/images/I/81ep5r449HL._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/71+jDvr3EOL._SX679_.jpg"
+        "product_name": "iQOO Z10R 5G (Aquamarine, 8GB RAM, 128GB Storage) | 32MP 4K Selfie Camera | Quad-Curved AMOLED Display | Dimensity 7400 Processor with 750K+ AnTuTu",
+        "product_price": "19,498",
+        "product_url": "https://www.amazon.in/iQOO-Aquamarine-Quad-Curved-Dimensity-Processor/dp/B0FHB5V36G/ref=sr_1_1?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-1"
+    },
+    {
+        "product_name": "Apple iPhone 15 (128 GB) - Black",
+        "product_price": "47,999",
+        "product_url": "https://www.amazon.in/Apple-iPhone-15-128-GB/dp/B0CHX1W1XY/ref=sr_1_2?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-2"
+    },
+    {
+        "product_name": "Apple iPhone 15 (128 GB) - Blue",
+        "product_price": "48,499",
+        "product_url": "https://www.amazon.in/Apple-iPhone-15-128-GB/dp/B0CHX2F5QT/ref=sr_1_3?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-3"
+    },
+    {
+        "product_name": "iQOO Z10R 5G (Moonstone, 8GB RAM, 128GB Storage) | 32MP 4K Selfie Camera | Quad-Curved AMOLED Display | Dimensity 7400 Processor with 750K+ AnTuTu",
+        "product_price": "19,498",
+        "product_url": "https://www.amazon.in/iQOO-Moonstone-Quad-Curved-Dimensity-Processor/dp/B0FHB5982P/ref=sr_1_4?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-4"
+    },
+    {
+        "product_name": "Samsung Galaxy S24 Ultra 5G AI Smartphone with Galaxy AI (Titanium Gray, 12GB, 256GB Storage), Snapdragon 8 Gen 3, 200 MP Camera with ProVisual Engine and 5000mAh Battery",
+        "product_price": "74,999",
+        "product_url": "https://www.amazon.in/Samsung-Galaxy-Smartphone-Titanium-Storage/dp/B0CS5XW6TN/ref=sr_1_5?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-5"
+    },
+    {
+        "product_name": "Apple iPhone 15 (128 GB) - Pink",
+        "product_price": "47,999",
+        "product_url": "https://www.amazon.in/Apple-iPhone-15-128-GB/dp/B0CHX3TW6X/ref=sr_1_6?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-6"
+    },
+    {
+        "product_name": "OnePlus Nord CE4 Lite 5G (Super Silver, 8GB RAM, 128GB Storage) | Lifetime Display Warranty | 5500 mAh Battery, 80W SUPERVOOC and Reverse Charging | 50MP Camera with OIS | 120Hz AMOLED Display",
+        "product_price": "15,999",
+        "product_url": "https://www.amazon.in/OnePlus-Super-Silver-128GB-Storage/dp/B0D5YCYS1G/ref=sr_1_7?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-7"
+    },
+    {
+        "product_name": "realme NARZO 80 Lite 5G (Crystal Purple, 6GB+128GB) | 6000mAh Long-Lasting Battery | MediaTek Dimensity 6300 5G | AI Assist | IP64 Rated Water & Dust Resistance | Military-Grade Durability",
+        "product_price": "9,898",
+        "product_url": "https://www.amazon.in/realme-Long-Lasting-Resistance-Military-Grade-Durability/dp/B0F9TT7Z5Q/ref=sr_1_8?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-8"
+    },
+    {
+        "product_name": "Samsung Galaxy S24 Ultra 5G AI Smartphone with Galaxy AI (Titanium Black, 12GB, 256GB Storage), Snapdragon 8 Gen 3, 200 MP Camera with ProVisual Engine and 5000mAh Battery",
+        "product_price": "74,999",
+        "product_url": "https://www.amazon.in/Samsung-Galaxy-Smartphone-Titanium-Storage/dp/B0CS5Z3T4M/ref=sr_1_9?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-9"
+    },
+    {
+        "product_name": "iQOO Z10x 5G (Ultramarine, 6GB RAM, 128GB Storage) | 6500 mAh Large Capacity Battery | Dimensity 7300 Processor | Military-Grade Durability",
+        "product_price": "12,998",
+        "product_url": "https://www.amazon.in/iQOO-Ultramarine-Dimensity-Military-Grade-Durability/dp/B0F2T7B9TM/ref=sr_1_10?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-10"
+    },
+    {
+        "product_name": "Redmi A4 5G (Sparkle Purple, 4GB RAM, 64GB Storage) | Segment Largest 6.88in 120Hz | 50MP Dual Camera | 18W Fast Charging | Charger in The Box",
+        "product_price": "7,499",
+        "product_url": "https://www.amazon.in/Redmi-A4-5G-Sparkle-Charging/dp/B0DLW427YG/ref=sr_1_11?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-11"
+    },
+    {
+        "product_name": "Apple iPhone 15 (128 GB) - Green",
+        "product_price": "47,999",
+        "product_url": "https://www.amazon.in/Apple-iPhone-15-128-GB/dp/B0CHX6NQMD/ref=sr_1_12?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-12"
+    },
+    {
+        "product_name": "realme NARZO 80 Lite 5G (Onyx Black, 6GB+128GB) | 6000mAh Long-Lasting Battery | MediaTek Dimensity 6300 5G | AI Assist | IP64 Rated Water & Dust Resistance | Military-Grade Durability",
+        "product_price": "9,898",
+        "product_url": "https://www.amazon.in/realme-Long-Lasting-Resistance-Military-Grade-Durability/dp/B0F9TS623W/ref=sr_1_13?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-13"
+    },
+    {
+        "product_name": "iQOO Z10 Lite 5G (Titanium Blue, 6GB RAM, 128GB Storage) | 6000 mAh Battery | Dimensity 6300 5G Processor with 433K+* AnTuTu Score | IP64 Rated & Military Grade Shock-Resistance*",
+        "product_price": "10,998",
+        "product_url": "https://www.amazon.in/iQOO-Titanium-Dimensity-Processor-Shock-Resistance/dp/B0FC5TDB9P/ref=sr_1_14?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-14"
+    },
+    {
+        "product_name": "Samsung Galaxy M05 (Mint Green, 4GB RAM, 64 GB Storage) | 50MP Dual Camera | Bigger 6.7\" HD+ Display | 5000mAh Battery | 25W Fast Charging | 2 Gen OS Upgrade & 4 Year Security Update | Without Charger",
+        "product_price": "6,249",
+        "product_url": "https://www.amazon.in/Samsung-Storage-Display-Charging-Security/dp/B0DFY3XCB6/ref=sr_1_15?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-15"
+    },
+    {
+        "product_name": "Redmi 13 5G Prime Edition, Black Diamond, 8GB+128GB | India Debut SD 4 Gen 2 AE | 108MP Pro Grade Camera | 6.79in Largest Display in Segment",
+        "product_price": "10,999",
+        "product_url": "https://www.amazon.in/Redmi-Diamond-Largest-Display-Segment/dp/B0D78Y577J/ref=sr_1_16?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-16"
+    },
+    {
+        "product_name": "Redmi A4 5G (Sparkle Purple, 4GB RAM, 128GB Storage) | Segment Largest 6.88in 120Hz | 50MP Dual Camera | 18W Fast Charging | Charger in The Box",
+        "product_price": "8,349",
+        "product_url": "https://www.amazon.in/Redmi-Sparkle-Storage-Segment-Charging/dp/B0DLW44CGS/ref=sr_1_17?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-17"
+    },
+    {
+        "product_name": "iQOO Z10 Lite 5G (Cyber Green, 6GB RAM, 128GB Storage) | 6000 mAh Battery | Dimensity 6300 5G Processor with 433K+* AnTuTu Score | IP64 Rated & Military Grade Shock-Resistance*",
+        "product_price": "10,998",
+        "product_url": "https://www.amazon.in/iQOO-Dimensity-Processor-Military-Shock-Resistance/dp/B0FC5XK9WZ/ref=sr_1_18?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-18"
+    },
+    {
+        "product_name": "Redmi 13 5G Prime Edition, Hawaiian Blue, 8GB+128GB | India Debut SD 4 Gen 2 AE | 108MP Pro Grade Camera | 6.79in Largest Display in Segment",
+        "product_price": "10,999",
+        "product_url": "https://www.amazon.in/Redmi-Hawaiian-Largest-Display-Segment/dp/B0D78X544X/ref=sr_1_19?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-19"
+    },
+    {
+        "product_name": "Redmi 13 5G Prime Edition, Orchid Pink, 8GB+128GB | India Debut SD 4 Gen 2 AE | 108MP Pro Grade Camera | 6.79in Largest Display in Segment",
+        "product_price": "10,999",
+        "product_url": "https://www.amazon.in/Redmi-Orchid-Largest-Display-Segment/dp/B0D78X5CMJ/ref=sr_1_20?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-20"
+    },
+    {
+        "product_name": "Samsung Galaxy M06 5G (Sage Green, 6GB RAM, 128 GB Storage) | MediaTek Dimensity 6300 | AnTuTu Score 422K+ | 12 5G Bands| 25W Fast Charging | 4 Gen of OS Upgrades | Without Charger",
+        "product_price": "8,999",
+        "product_url": "https://www.amazon.in/Samsung-MediaTek-Dimensity-Charging-Upgrades/dp/B0DX655V11/ref=sr_1_21?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-21"
+    },
+    {
+        "product_name": "iQOO Z10x 5G (Titanium, 6GB RAM, 128GB Storage) | 6500 mAh Large Capacity Battery | Dimensity 7300 Processor | Military-Grade Durability",
+        "product_price": "12,998",
+        "product_url": "https://www.amazon.in/iQOO-Dimensity-Processor-Military-Grade-Durability/dp/B0F2T674FJ/ref=sr_1_22?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-22"
+    },
+    {
+        "product_name": "realme NARZO 80 Lite 4G (Beach Gold, 4GB+64GB) | 6300mAh Segment's Biggest Battery | 7.94mm Slim Design | 300% Ultra Volume | Pulse Light: 9 Colors, 5 Glow Modes | Ai Assist",
+        "product_price": "6,298",
+        "product_url": "https://www.amazon.in/realme-6300mAh-Segments-Biggest-Battery/dp/B0FG2NBVBN/ref=sr_1_23?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-23"
+    },
+    {
+        "product_name": "Redmi A4 5G (Starry Black, 4GB RAM, 64GB Storage) | Segment Largest 6.88in 120Hz | 50MP Dual Camera | 18W Fast Charging | Charger in The Box",
+        "product_price": "7,499",
+        "product_url": "https://www.amazon.in/Redmi-Storage-Segment-Largest-Charging/dp/B0DLW1L5PR/ref=sr_1_24?dib=eyJ2IjoiMSJ9.lwRYANhnCNq6dfFnzr_RcVl17rHALpjDndzWbpNnG-WUh65mcrfBnO4mMcz16361BlzrrHD1iTcrHB50WinTC3MdbFf9TvX3wR2dUlM6GMLeAH-krfY6MSj7I1l_FRFW60BLUxXbbl3ucFebx9He4hdDFFXXPvy3qabzf-mO1NXBZhukCONMSV7jwK6SrBVZ_opDCyXWi08QlfSCEeGyyqq4rJAXsDszvA_Znh_PbTPG39r7KdTRN9vqIDSscwYyPCarlNmk_o9T49l0630DnbvtJiW1u2A1rM9PcpSM7yY.0TYdpva7kj8haTCeAxOX4b8b_rR0iL44FQvkC2Fs_gQ&dib_tag=se&qid=1759570349&s=electronics&sr=1-24"
     },
     {
         "product_name": "Redmi A4 5G (Sparkle Purple, 6GB RAM, 128GB Storage) | Global Debut SD 4s Gen 2 | Segment Largest 6.88in 120Hz | 50MP Dual Camera | 18W Fast Charging",
         "product_price": "8,999",
-        "product_url": "https://www.amazon.in/Redmi-A4-5G-Sparkle-Charging/dp/B0FBR69B2R/ref=sr_1_26?dib=eyJ2IjoiMSJ9.myS3KqpgqjFHbGR31VHS2_wLWWQMz7C6yy5ljolNbFqrbkCfEO5PNvuJYlTaTv_lOfIIGmUwfuXMG7Emwa6DYRH5icFOOPH9AIF4s_nBby-jE2JdoBSpTzsl7jDtvggZEsfCRLNSYH5yT5_5IswvXM7hDWjyPzFBboQE_X9vZiTonxOM0Z85dWZHJiy-vwwDkeD9XrUGE8G6iWiK6fpUFRNYDhggGsn78g7pv_Qb1zY0sKdlFR1jgpYBuSQGb5ftuHUmWzS3BhyFUeqvcE0FZ_4m1woTL0Fsu4UKvV0I7bQ.ROpxpv8VdWinGlETCsQq4Zi95a0fZ2FEmZn_-ykN39s&dib_tag=se&qid=1759512866&s=electronics&sr=1-26",
-        "product_details": "<p>High performance - Snapdragon 4s Gen 2 5G Processor | Large 17.47cm 120Hz Display | Upto 8GB RAM including 6GB Virtual RAM |128GB Storage | Fast Side fingerprint sensor</p>\n<p>Display: Large 17.47 cm 120Hz Refresh Rate display | 600nits peak brightness | 240Hz Touch sampling Rate | TUV triple certified eye care protection</p>\n<p>Camera: 50MP Dual camera | 5MP Front camera</p>\n<p>5160mAh(typ) battery with 18W fast charging support and 33W charger in-box with USB Type-C</p>\n<p>Expandable Storage to upto 1TB with Dedicated MicroSD card Slot | 3.5mm headphone jack | Android 14 | Side fingerprint sensor</p>",
-        "image_url_1": "https://m.media-amazon.com/images/I/81XFxdV8Y4L._SX679_.jpg",
-        "image_url_2": "https://m.media-amazon.com/images/I/71PNpGSF9mL._SX679_.jpg",
-        "image_url_3": "https://m.media-amazon.com/images/I/81GL8Y5GK9L._SX679_.jpg",
-        "image_url_4": "https://m.media-amazon.com/images/I/81P7bWuGIlL._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/81BGKLI+cWL._SX679_.jpg"
+        "product_url": "https://www.amazon.in/Redmi-A4-5G-Sparkle-Charging/dp/B0FBR69B2R/ref=sr_1_25?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-25"
+    },
+    {
+        "product_name": "iQOO Neo 10R 5G (Moonknight Titanium, 8GB RAM, 256GB Storage) | Snapdragon 8s Gen 3 Processor | India's Slimmest 6400mAh Battery Smartphone | Segment's Most Stable 90FPS for 5 Hours",
+        "product_price": "26,998",
+        "product_url": "https://www.amazon.in/iQOO-Moonknight-Snapdragon-Processor-Smartphone/dp/B0DW47JCHW/ref=sr_1_26?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-26"
+    },
+    {
+        "product_name": "iQOO Z10R 5G (Aquamarine, 8GB RAM, 256GB Storage) | 32MP 4K Selfie Camera | Quad-Curved AMOLED Display | Dimensity 7400 Processor with 750K+ AnTuTu",
+        "product_price": "21,498",
+        "product_url": "https://www.amazon.in/iQOO-Aquamarine-Quad-Curved-Dimensity-Processor/dp/B0FHB4F4TN/ref=sr_1_27?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-27"
+    },
+    {
+        "product_name": "OnePlus Nord 5 | Snapdragon 8s Gen 3 | Stable 144FPS Gaming | Dual 50MP Flagship Camera | Powered by OnePlus AI | 8GB + 256GB | Phantom Grey",
+        "product_price": "31,998",
+        "product_url": "https://www.amazon.in/OnePlus-Snapdragon-Flagship-Powered-Phantom/dp/B0FCML66W9/ref=sr_1_28?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-28"
+    },
+    {
+        "product_name": "Samsung Galaxy M36 5G (Velvet Black, 6 GB RAM, 128 GB Storage)| Circle to Search| Google Gemini| Corning Gorilla Glass Victus+| 7.7mm Slim| AI Enhanced 50 MP OIS Triple Camera| Unmatched Nightography",
+        "product_price": "13,999",
+        "product_url": "https://www.amazon.in/Samsung-Storage-Enhanced-Unmatched-Nightography/dp/B0FDBB2VRC/ref=sr_1_29?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-29"
     },
     {
         "product_name": "iQOO Z10 Lite 5G (Titanium Blue, 4GB RAM, 128GB Storage) | 6000 mAh Battery | Dimensity 6300 5G Processor with 433K+* AnTuTu Score | IP64 Rated & Military Grade Shock-Resistance*",
         "product_price": "9,998",
-        "product_url": "https://www.amazon.in/iQOO-Titanium-Dimensity-Processor-Shock-Resistance/dp/B0FC5XCLXG/ref=sr_1_27?dib=eyJ2IjoiMSJ9.myS3KqpgqjFHbGR31VHS2_wLWWQMz7C6yy5ljolNbFqrbkCfEO5PNvuJYlTaTv_lOfIIGmUwfuXMG7Emwa6DYRH5icFOOPH9AIF4s_nBby-jE2JdoBSpTzsl7jDtvggZEsfCRLNSYH5yT5_5IswvXM7hDWjyPzFBboQE_X9vZiTonxOM0Z85dWZHJiy-vwwDkeD9XrUGE8G6iWiK6fpUFRNYDhggGsn78g7pv_Qb1zY0sKdlFR1jgpYBuSQGb5ftuHUmWzS3BhyFUeqvcE0FZ_4m1woTL0Fsu4UKvV0I7bQ.ROpxpv8VdWinGlETCsQq4Zi95a0fZ2FEmZn_-ykN39s&dib_tag=se&qid=1759512866&s=electronics&sr=1-27",
-        "product_details": "<p>Segment's biggest battery 5G smartphone* - Powered by a massive 6000mAh battery & 15W FlashCharge, keeping you ahead of the day with uninterrupted energy for entertainment, work, and everything in between</p>\n<p>Dimensity 6300 5G Processor with 433K+* AnTuTu Score - A highly power efficient 6nm chip with CPU speeds upgraded to reach 2.4 GHz delivering a lag-free everyday experience with low power consumption.</p>\n<p>IP64 Rated & Military Grade Shock-Resistance* - Fearless against the dust, rain, Forging Ahead. No need to worry about unexpected splashes in life with IP64 protection. Also, enjoy Protection from accidental drops from pockets or desks with Military grade shock resistance.</p>\n<p>50MP Sony AI Camera - Snap stunning photos with advanced AI features like AI erase, AI Photo enhance, AI document mode & many more.</p>\n<p>1000 nits High Brightness Display - Enjoy the ultimate viewing experience with 6.74\" (17.13 cm) Large display, 90Hz Refresh Rate & 1000 nits High brightness mode</p>",
-        "image_url_1": "https://m.media-amazon.com/images/I/61FoX+3CI7L._SX679_.jpg",
-        "image_url_2": "https://m.media-amazon.com/images/I/61bPYriu1jL._SX679_.jpg",
-        "image_url_3": "https://m.media-amazon.com/images/I/61yMCWNcyoL._SX679_.jpg",
-        "image_url_4": "https://m.media-amazon.com/images/I/71vYbF44a1L._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/61vww2LWl9L._SX679_.jpg"
+        "product_url": "https://www.amazon.in/iQOO-Titanium-Dimensity-Processor-Shock-Resistance/dp/B0FC5XCLXG/ref=sr_1_30?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-30"
+    },
+    {
+        "product_name": "Redmi A4 5G (Starry Black, 4GB RAM, 128GB Storage) | Segment Largest 6.88in 120Hz | 50MP Dual Camera | 18W Fast Charging | Charger in The Box",
+        "product_price": "8,349",
+        "product_url": "https://www.amazon.in/Redmi-A4-5G-Storage-Charging/dp/B0DLW4QD72/ref=sr_1_31?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-31"
+    },
+    {
+        "product_name": "realme NARZO 80 Lite 4G (Obsidian Black, 4GB+64GB) | 6300mAh Segment's Biggest Battery | 7.94mm Slim Design | 300% Ultra Volume | Pulse Light: 9 Colors, 5 Glow Modes | Ai Assist",
+        "product_price": "6,298",
+        "product_url": "https://www.amazon.in/realme-Obsidian-6300mAh-Segments-Biggest/dp/B0FG2LPC6K/ref=sr_1_32?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-32"
+    },
+    {
+        "product_name": "iQOO Neo 10 (Titanium Chrome, 8GB RAM, 256GB Storage) | Snapdragon 8s Gen 4 Processor & SuperComputing Chip Q1 | 7000 mAh Battery | Segment’s Highest 144 FPS Gaming Smartphone",
+        "product_price": "31,998",
+        "product_url": "https://www.amazon.in/iQOO-Snapdragon-Processor-SuperComputing-Smartphone/dp/B0F83LL1D2/ref=sr_1_33?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-33"
+    },
+    {
+        "product_name": "Samsung Galaxy A55 5G (Awesome Iceblue, 8GB RAM, 256GB Storage) | AI | Metal Frame | 50 MP Main Camera (OIS) | Super HDR Video| Nightography | IP67 | Corning Gorilla Glass Victus+ | sAMOLED Display",
+        "product_price": "25,999",
+        "product_url": "https://www.amazon.in/Samsung-Awesome-Iceblue-Storage-Nightography/dp/B0CWPCFSM3/ref=sr_1_34?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-34"
+    },
+    {
+        "product_name": "Redmi A4 5G (Starry Black, 6GB RAM, 128GB Storage) | Segment Largest 6.88in 120Hz | 50MP Dual Camera | 18W Fast Charging | Charger in The Box",
+        "product_price": "8,999",
+        "product_url": "https://www.amazon.in/Redmi-A4-5G-Storage-Charging/dp/B0FBRM15FH/ref=sr_1_35?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-35"
+    },
+    {
+        "product_name": "Samsung Galaxy M36 5G (Serene Green, 6 GB RAM, 128 GB Storage)| Circle to Search| Google Gemini| Corning Gorilla Glass Victus+| 7.7mm Slim| AI Enhanced 50 MP OIS Triple Camera| Unmatched Nightography",
+        "product_price": "13,999",
+        "product_url": "https://www.amazon.in/Samsung-Storage-Enhanced-Unmatched-Nightography/dp/B0FDB9H277/ref=sr_1_36?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-36"
+    },
+    {
+        "product_name": "iQOO Z10R 5G (Moonstone, 8GB RAM, 256GB Storage) | 32MP 4K Selfie Camera | Quad-Curved AMOLED Display | Dimensity 7400 Processor with 750K+ AnTuTu",
+        "product_price": "21,498",
+        "product_url": "https://www.amazon.in/iQOO-Moonstone-Quad-Curved-Dimensity-Processor/dp/B0FHB59PXX/ref=sr_1_37?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-37"
+    },
+    {
+        "product_name": "iQOO Z10 Lite 5G (Cyber Green, 4GB RAM, 128GB Storage) | 6000 mAh Battery | Dimensity 6300 5G Processor with 433K+* AnTuTu Score | IP64 Rated & Military Grade Shock-Resistance*",
+        "product_price": "9,998",
+        "product_url": "https://www.amazon.in/iQOO-Dimensity-Processor-Military-Shock-Resistance/dp/B0FC5TBWG5/ref=sr_1_38?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-38"
+    },
+    {
+        "product_name": "Samsung Galaxy M06 5G (Sage Green, 4GB RAM, 128 GB Storage) | MediaTek Dimensity 6300 | AnTuTu Score 422K+ | 12 5G Bands| 25W Fast Charging | 4 Gen of OS Upgrades | Without Charger",
+        "product_price": "7,999",
+        "product_url": "https://www.amazon.in/Samsung-MediaTek-Dimensity-Charging-Upgrades/dp/B0DX6P3RX9/ref=sr_1_39?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-39"
+    },
+    {
+        "product_name": "OnePlus 13R | Smarter with OnePlus AI | Lifetime Display Warranty (12GB RAM, 256GB Storage Nebula Noir)",
+        "product_price": "38,999",
+        "product_url": "https://www.amazon.in/OnePlus-13R-Smarter-Lifetime-Warranty/dp/B0DPS62DYH/ref=sr_1_40?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-40"
+    },
+    {
+        "product_name": "realme NARZO 80 Lite 4G (Beach Gold, 6GB+128GB) | 6300mAh Segment's Biggest Battery | 7.94mm Slim Design | 300% Ultra Volume | Pulse Light: 9 Colors, 5 Glow Modes | Ai Assist",
+        "product_price": "7,199",
+        "product_url": "https://www.amazon.in/realme-6300mAh-Segments-Biggest-Battery/dp/B0FG2NDHJM/ref=sr_1_41?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-41"
+    },
+    {
+        "product_name": "iQOO Z10 Lite 5G (Cyber Green, 8GB RAM, 256GB Storage) | 6000 mAh Battery | Dimensity 6300 5G Processor with 433K+* AnTuTu Score | IP64 Rated & Military Grade Shock-Resistance*",
+        "product_price": "12,998",
+        "product_url": "https://www.amazon.in/iQOO-Dimensity-Processor-Military-Shock-Resistance/dp/B0FC5XDV5R/ref=sr_1_42?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-42"
+    },
+    {
+        "product_name": "iQOO Z10x 5G (Ultramarine, 8GB RAM, 128GB Storage) | 6500 mAh Large Capacity Battery | Dimensity 7300 Processor | Military-Grade Durability",
+        "product_price": "14,498",
+        "product_url": "https://www.amazon.in/iQOO-Ultramarine-Dimensity-Military-Grade-Durability/dp/B0F2T6TV4M/ref=sr_1_43?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-43"
+    },
+    {
+        "product_name": "iQOO Z10 Lite 5G (Titanium Blue, 8GB RAM, 256GB Storage) | 6000 mAh Battery | Dimensity 6300 5G Processor with 433K+* AnTuTu Score | IP64 Rated & Military Grade Shock-Resistance*",
+        "product_price": "12,998",
+        "product_url": "https://www.amazon.in/iQOO-Titanium-Dimensity-Processor-Shock-Resistance/dp/B0FC5QGMZ1/ref=sr_1_44?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-44"
+    },
+    {
+        "product_name": "Samsung Galaxy M06 5G (Sage Green, 4GB RAM, 64GB Storage) | MediaTek Dimensity 6300 | AnTuTu Score 422K+ | 12 5G Bands| 25W Fast Charging | 4 Gen of OS Upgrades | Without Charger",
+        "product_price": "7,499",
+        "product_url": "https://www.amazon.in/Samsung-MediaTek-Dimensity-Charging-Upgrades/dp/B0F3X54YTF/ref=sr_1_45?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-45"
+    },
+    {
+        "product_name": "iQOO Z10x 5G (Titanium, 8GB RAM, 256GB Storage) | 6500 mAh Large Capacity Battery | Dimensity 7300 Processor | Military-Grade Durability",
+        "product_price": "15,998",
+        "product_url": "https://www.amazon.in/iQOO-Dimensity-Processor-Military-Grade-Durability/dp/B0F2T5RBCW/ref=sr_1_46?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-46"
+    },
+    {
+        "product_name": "OnePlus Nord CE5 | Massive 7100mAh Battery | MediaTek Dimensity 8350 Apex | Powered by OnePlus AI | 8GB + 128GB | Black Infinity",
+        "product_price": "24,997",
+        "product_url": "https://www.amazon.in/OnePlus-Massive-MediaTek-Dimensity-Infinity/dp/B0FCMLCX46/ref=sr_1_47?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-47"
+    },
+    {
+        "product_name": "OnePlus Nord 5 | Snapdragon 8s Gen 3 | Stable 144FPS Gaming | Dual 50MP Flagship Camera | Powered by OnePlus AI | 8GB + 256GB | Dry Ice",
+        "product_price": "31,998",
+        "product_url": "https://www.amazon.in/OnePlus-Snapdragon-Stable-Flagship-Powered/dp/B0FCMKSP7V/ref=sr_1_48?dib=eyJ2IjoiMSJ9.qlzVxV5SgAYVGGX5OI8ENZInvUdkRk57GLxx1r-XK1xKBVihxeQw-ilCJ3WVTDlSWcYruM7KoJGQ-nQJ4st8qLeW7E-GvV-Ez9rH70yWnG1cfdSAhEfF5ADxWzy3OvWJGCZqNhBBqA6hsvBUa0W2lscnQiiKFlyq7Kmpd49eKXTsmzGmCMYBdxTDjD0we19Z3V1fUMix7mlyJ-DBu1fUEQjgB-XaEBrK_BRUWiGHgTKEvQSSRtmj0K1vSWvN6-3BRWoBkAaXYpS01MTe4zlhTM8gzRlkMN4k-ZTEUqD8IWY.ZtuTdBUKncU1A_STz8Kozq-vGXGwvvkPAqGNLuA5BW8&dib_tag=se&qid=1759570357&s=electronics&sr=1-48"
     }
 ]
