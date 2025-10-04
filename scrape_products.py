@@ -303,42 +303,47 @@ def main():
     try:
         driver = setup_driver(headless)
         while True:
-            current_url = f"{base_url}&page={page_num}" if page_num > 1 else base_url
-            print(f"{COLOR_STEP}--- STEP 3: Scraping Page {page_num} ---{COLOR_RESET}", flush=True)
-            print(f"{COLOR_INFO}INFO: Navigating to URL: {current_url}{COLOR_RESET}", flush=True)
+            current_page_retry_count = 0
+            while current_page_retry_count < 3: # Retry up to 3 times for the current page
+                current_url = f"{base_url}&page={page_num}" if page_num > 1 else base_url
+                print(f"{COLOR_STEP}--- STEP 3: Scraping Page {page_num} (Attempt {current_page_retry_count + 1}) ---{COLOR_RESET}", flush=True)
+                print(f"{COLOR_INFO}INFO: Navigating to URL: {current_url}{COLOR_RESET}", flush=True)
 
-            html_content = scrape_page(driver, current_url)
+                html_content = scrape_page(driver, current_url)
 
-            # Check for the "Go to the Amazon.in home page" link
-            # This needs to happen before parsing products, as the link might replace product listings
-            # If the link is found and handled, the page_num might change or the driver navigates.
-            # Check for the "Go to the Amazon.in home page" link
-            link_was_handled = handle_amazon_home_link(driver, page_num, base_url)
-            
-            if link_was_handled:
-                # If the link was handled, the driver is now on the correct product search page.
-                # We need to re-fetch the HTML content from the current driver state.
-                print(f"{COLOR_INFO}INFO: Amazon home link successfully handled. Re-fetching HTML content from current driver state for page {page_num}...{COLOR_RESET}", flush=True)
-                html_content = driver.page_source
-                no_product_pages_count = 0 # Reset counter as we've navigated and are on a fresh product page
-            
-            page_products = parse_products(html_content)
-            
-            if not page_products:
-                no_product_pages_count += 1
-                print(f"{COLOR_WARNING}WARNING: No non-sponsored products found on page {page_num}. Consecutive empty pages: {no_product_pages_count}. {COLOR_RESET}", flush=True)
-                if no_product_pages_count >= 3:
-                    print(f"{COLOR_CRITICAL}CRITICAL: No non-sponsored products found on 3 consecutive pages. Terminating scraping process.{COLOR_RESET}", flush=True)
-                    break
-            else:
-                no_product_pages_count = 0 # Reset counter if products are found
-                # Save products for the current page directly to JSON
-                output_filename = f"{product}.json"
-                save_to_json(page_products, output_filename)
-                print(f"{COLOR_SUCCESS}SUCCESS: Found {len(page_products)} products on page {page_num}. Data appended to {output_filename}.{COLOR_RESET}", flush=True)
+                link_was_handled = handle_amazon_home_link(driver, page_num, base_url)
+                
+                if link_was_handled:
+                    print(f"{COLOR_INFO}INFO: Amazon home link successfully handled. Re-fetching HTML content from current driver state for page {page_num}...{COLOR_RESET}", flush=True)
+                    html_content = driver.page_source
+                    # Reset retry count if link was handled, as it's a fresh attempt on the page
+                    current_page_retry_count = 0
+                
+                page_products = parse_products(html_content)
+                
+                if not page_products:
+                    current_page_retry_count += 1
+                    print(f"{COLOR_WARNING}WARNING: No non-sponsored products found on page {page_num} (Attempt {current_page_retry_count}).{COLOR_RESET}", flush=True)
+                    if current_page_retry_count < 3:
+                        print(f"{COLOR_INFO}INFO: Retrying page {page_num}...{COLOR_RESET}", flush=True)
+                        time.sleep(random.uniform(3, 7)) # Add a longer delay before retrying the same page
+                        continue # Retry the current page
+                    else:
+                        print(f"{COLOR_CRITICAL}CRITICAL: No non-sponsored products found on page {page_num} after 3 attempts. Moving to next page.{COLOR_RESET}", flush=True)
+                        no_product_pages_count += 1 # Increment global empty page counter
+                        break # Exit retry loop, proceed to next page
+                else:
+                    no_product_pages_count = 0 # Reset global empty page counter if products are found
+                    current_page_retry_count = 0 # Reset current page retry counter
+                    output_filename = f"{product}.json"
+                    save_to_json(page_products, output_filename)
+                    print(f"{COLOR_SUCCESS}SUCCESS: Found {len(page_products)} products on page {page_num}. Data appended to {output_filename}.{COLOR_RESET}", flush=True)
+                    break # Exit retry loop, products found, proceed to next page
 
-            # Implement a more robust check for next page availability if possible
-            # For now, a simple page increment. You might need to check for a "next page" button/link.
+            if no_product_pages_count >= 3: # Check global empty page counter after all retries for a page
+                print(f"{COLOR_CRITICAL}CRITICAL: No non-sponsored products found on 3 consecutive pages (including retries). Terminating scraping process.{COLOR_RESET}", flush=True)
+                break
+
             page_num += 1
             time.sleep(random.uniform(2, 5)) # Be polite and avoid hammering the server, random delay
 
