@@ -8,7 +8,6 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
     permissions:
       contents: write # Grant write permissions for the workflow to push changes
     steps:
