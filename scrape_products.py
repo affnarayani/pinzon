@@ -304,7 +304,7 @@ def main():
         driver = setup_driver(headless)
         while True:
             current_page_retry_count = 0
-            while current_page_retry_count < 3: # Retry up to 3 times for the current page
+            while current_page_retry_count < 5: # Retry up to 5 times for the current page
                 current_url = f"{base_url}&page={page_num}" if page_num > 1 else base_url
                 print(f"{COLOR_STEP}--- STEP 3: Scraping Page {page_num} (Attempt {current_page_retry_count + 1}) ---{COLOR_RESET}", flush=True)
                 print(f"{COLOR_INFO}INFO: Navigating to URL: {current_url}{COLOR_RESET}", flush=True)
@@ -324,12 +324,12 @@ def main():
                 if not page_products:
                     current_page_retry_count += 1
                     print(f"{COLOR_WARNING}WARNING: No non-sponsored products found on page {page_num} (Attempt {current_page_retry_count}).{COLOR_RESET}", flush=True)
-                    if current_page_retry_count < 3:
+                    if current_page_retry_count < 5:
                         print(f"{COLOR_INFO}INFO: Retrying page {page_num}...{COLOR_RESET}", flush=True)
                         time.sleep(random.uniform(3, 7)) # Add a longer delay before retrying the same page
                         continue # Retry the current page
                     else:
-                        print(f"{COLOR_CRITICAL}CRITICAL: No non-sponsored products found on page {page_num} after 3 attempts. Moving to next page.{COLOR_RESET}", flush=True)
+                        print(f"{COLOR_CRITICAL}CRITICAL: No non-sponsored products found on page {page_num} after 5 attempts. Moving to next page.{COLOR_RESET}", flush=True)
                         no_product_pages_count += 1 # Increment global empty page counter
                         break # Exit retry loop, proceed to next page
                 else:
@@ -340,8 +340,8 @@ def main():
                     print(f"{COLOR_SUCCESS}SUCCESS: Found {len(page_products)} products on page {page_num}. Data appended to {output_filename}.{COLOR_RESET}", flush=True)
                     break # Exit retry loop, products found, proceed to next page
 
-            if no_product_pages_count >= 3: # Check global empty page counter after all retries for a page
-                print(f"{COLOR_CRITICAL}CRITICAL: No non-sponsored products found on 3 consecutive pages (including retries). Terminating scraping process.{COLOR_RESET}", flush=True)
+            if no_product_pages_count >= 5: # Check global empty page counter after all retries for a page
+                print(f"{COLOR_CRITICAL}CRITICAL: No non-sponsored products found on 5 consecutive pages (including retries). Terminating scraping process.{COLOR_RESET}", flush=True)
                 break
 
             page_num += 1
