@@ -80,6 +80,23 @@ def extract_image_urls_from_page(driver, image_urls_set, allowed_endings):
         except Exception:
             pass # Silently pass if an XPath element is not found
 
+def check_and_click_continue_shopping(driver):
+    """
+    Checks for the 'Continue shopping' button and clicks it if found.
+    Returns True if the button was found and clicked, False otherwise.
+    """
+    try:
+        # Using a more specific CSS selector to target the button
+        continue_button = WebDriverWait(driver, 5).until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, "span.a-button-primary.a-span12 button.a-button-text[alt='Continue shopping']"))
+        )
+        print(f"{Fore.BLUE}  'Continue shopping' button found. Clicking it...{Style.RESET_ALL}")
+        continue_button.click()
+        time.sleep(3) # Wait for the page to load after clicking
+        return True
+    except Exception:
+        return False
+
 def _scrape_single_product_details(driver, product):
     """Scrapes details for a single product, including images and product details."""
     product_url = product.get("product_url")
@@ -91,18 +108,6 @@ def _scrape_single_product_details(driver, product):
     print(f"{Fore.GREEN}Navigating to: {Fore.YELLOW}{product_name}{Style.RESET_ALL}")
     driver.get(product_url)
     time.sleep(3) # Increased initial sleep time
-
-    def handle_continue_shopping_button(driver_instance):
-        try:
-            continue_button = WebDriverWait(driver_instance, 5).until(
-                EC.element_to_be_clickable((By.XPATH, "//button[@type='submit' and contains(text(), 'Continue shopping')]"))
-            )
-            print(f"{Fore.YELLOW}  'Continue shopping' button found. Clicking it...{Style.RESET_ALL}")
-            continue_button.click()
-            time.sleep(3) # Wait for the page to load after clicking
-            return True
-        except Exception:
-            return False
 
     image_urls = set() # Use a set to store unique URLs
 
@@ -124,6 +129,25 @@ def _scrape_single_product_details(driver, product):
     # Image extraction with retry mechanism
     for attempt in range(5):
         print(f"{Fore.CYAN}  Attempting image extraction (Attempt {attempt + 1})...{Style.RESET_ALL}")
+        
+        # Check for and click 'Continue shopping' button
+        if check_and_click_continue_shopping(driver):
+            print(f"{Fore.BLUE}  Retrying image extraction after clicking 'Continue shopping'.{Style.RESET_ALL}")
+            # After clicking, the page might reload or change, so we should re-evaluate elements
+            try:
+                WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, "#altImages .item, .image-block .a-list-item"))
+                )
+            except Exception as e:
+                print(f"{Fore.YELLOW}  Warning: Thumbnail elements not present after 'Continue shopping' click: {e}{Style.RESET_ALL}")
+            time.sleep(3)
+            thumbnail_elements = driver.find_elements(By.CSS_SELECTOR, "#altImages .item, .image-block .a-list-item")
+            if not thumbnail_elements:
+                thumbnail_elements = driver.find_elements(By.CSS_SELECTOR, "#altImages .item")
+            if not thumbnail_elements:
+                thumbnail_elements = driver.find_elements(By.CSS_SELECTOR, ".image-block .a-list-item")
+
+
         image_urls.clear() # Clear previous attempts' URLs
         
         # Initial image extraction
@@ -169,14 +193,9 @@ def _scrape_single_product_details(driver, product):
             print(f"{Fore.GREEN}  Successfully scraped {len(image_urls)} images (Attempt {attempt + 1}){Style.RESET_ALL}")
             break
         else:
-            print(f"{Fore.YELLOW}  Only found {len(image_urls)} images on attempt {attempt + 1}. Checking for 'Continue shopping' button...{Style.RESET_ALL}")
-            if attempt == 0 and handle_continue_shopping_button(driver):
-                print(f"{Fore.YELLOW}  Retrying image scraping after clicking 'Continue shopping' button.{Style.RESET_ALL}")
-                continue # Retry current attempt after clicking button
-            else:
-                print(f"{Fore.YELLOW}  No 'Continue shopping' button found or not first attempt. Refreshing page for images...{Style.RESET_ALL}")
-                driver.refresh()
-                time.sleep(5)
+            print(f"{Fore.YELLOW}  Only found {len(image_urls)} images on attempt {attempt + 1}. Refreshing page for images...{Style.RESET_ALL}")
+            driver.refresh()
+            time.sleep(5)
     
     if len(image_urls) < 5:
         print(f"{Fore.YELLOW}  Could not scrape 5 images after multiple attempts for {product_name}. Found {len(image_urls)}.{Style.RESET_ALL}")
@@ -185,6 +204,12 @@ def _scrape_single_product_details(driver, product):
     details = []
     product_details_str = ""
     for attempt in range(5): # Retry up to 5 times
+        # Check for and click 'Continue shopping' button
+        if check_and_click_continue_shopping(driver):
+            print(f"{Fore.BLUE}  Retrying product details extraction after clicking 'Continue shopping'.{Style.RESET_ALL}")
+            driver.get(product_url) # Re-navigate to ensure fresh page state
+            time.sleep(3)
+
         try:
             # Wait for the product details section to be present
             WebDriverWait(driver, 10).until(
@@ -208,23 +233,14 @@ def _scrape_single_product_details(driver, product):
                 print(f"{Fore.MAGENTA}  Scraped product details for {product_name} (Attempt {attempt + 1}){Style.RESET_ALL}")
                 break # Break out of retry loop if successful
             else:
-                print(f"{Fore.YELLOW}  No product details found on attempt {attempt + 1} for {product_name}. Checking for 'Continue shopping' button...{Style.RESET_ALL}")
-                if attempt == 0 and handle_continue_shopping_button(driver):
-                    print(f"{Fore.YELLOW}  Retrying product details scraping after clicking 'Continue shopping' button.{Style.RESET_ALL}")
-                    continue # Retry current attempt after clicking button
-                else:
-                    print(f"{Fore.YELLOW}  No 'Continue shopping' button found or not first attempt. Refreshing page...{Style.RESET_ALL}")
-                    driver.refresh()
-                    time.sleep(5) # Wait after refresh
+                print(f"{Fore.YELLOW}  No product details found on attempt {attempt + 1} for {product_name}. Refreshing page...{Style.RESET_ALL}")
+                driver.refresh()
+                time.sleep(5) # Wait after refresh
         except Exception as e:
             print(f"{Fore.YELLOW}  Could not find product details section on attempt {attempt + 1}: {e}{Style.RESET_ALL}")
             if attempt < 4: # Don't refresh on the last attempt if it failed
-                if attempt == 0 and handle_continue_shopping_button(driver):
-                    print(f"{Fore.YELLOW}  Retrying product details scraping after clicking 'Continue shopping' button.{Style.RESET_ALL}")
-                    continue # Retry current attempt after clicking button
-                else:
-                    driver.refresh()
-                    time.sleep(5) # Wait after refresh
+                driver.refresh()
+                time.sleep(5) # Wait after refresh
     
     if not details:
         print(f"{Fore.YELLOW}  No product details found for {product_name} after multiple attempts.{Style.RESET_ALL}")
@@ -290,14 +306,13 @@ def scrape_product_details():
         for i, product in enumerate(products_data):
             print(f"\n{Fore.WHITE}--- Processing product {i+1}/{len(products_data)} ---{Style.RESET_ALL}")
             
-            # Skip if product_details already exists
-            if "product_details" in product and product["product_details"]:
-                print(f"{Fore.YELLOW}  Skipping '{product.get('product_name', 'Unknown Product')}' - product details already scraped.{Style.RESET_ALL}")
-                continue
-
-            # Only process products that have less than 5 image_url_X keys or if product_details is missing
             image_url_count = sum(1 for key in product if key.startswith("image_url_"))
-            if image_url_count < 5 or "product_details" not in product:
+            
+            # Condition to determine if scraping is needed
+            # Scrape if product_details is missing, or is empty, or if image_url_count is less than 5
+            needs_scraping = not ("product_details" in product and product["product_details"] and image_url_count >= 5)
+
+            if needs_scraping:
                 _scrape_single_product_details(driver, product)
                 
                 # Write the updated data back to the file after each product
@@ -305,7 +320,7 @@ def scrape_product_details():
                     json.dump(products_data, f, indent=4, ensure_ascii=False)
                 print(f"{Fore.GREEN}  Successfully updated '{product.get('product_name', 'Unknown Product')}' in {product_file}{Style.RESET_ALL}")
             else:
-                print(f"{Fore.YELLOW}  Skipping '{product.get('product_name', 'Unknown Product')}' - already has 5 images and product details.{Style.RESET_ALL}")
+                print(f"{Fore.YELLOW}  Skipping '{product.get('product_name', 'Unknown Product')}' - already has product details and at least 5 images.{Style.RESET_ALL}")
                 
     except KeyboardInterrupt:
         print(f"\n{Fore.RED}KeyboardInterrupt detected. Exiting gracefully...{Style.RESET_ALL}")
