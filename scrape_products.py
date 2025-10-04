@@ -13,6 +13,15 @@ import random # Import random for random delays
 from selenium_stealth import stealth
 from webdriver_manager.chrome import ChromeDriverManager
 
+# --- ANSI Color Codes ---
+COLOR_RESET = "\033[0m"
+COLOR_INFO = "\033[94m"    # Blue
+COLOR_SUCCESS = "\033[92m" # Green
+COLOR_WARNING = "\033[93m" # Yellow
+COLOR_ERROR = "\033[91m"   # Red
+COLOR_CRITICAL = "\033[41m\033[97m" # Red background, White text
+COLOR_STEP = "\033[96m"    # Cyan
+
 # --- Configuration Variables ---
 product = "mobile_phones"  # Manually set by developer, must match key in product_links.json
 headless = True           # Toggle for headless/headful browser mode
@@ -34,7 +43,7 @@ def clear_output_folder(folder_path):
             elif os.path.isdir(file_path):
                 shutil.rmtree(file_path)
         except Exception as e:
-            print(f'Failed to delete {file_path}. Reason: {e}')
+            print(f"{COLOR_ERROR}ERR: Failed to delete {file_path}. Reason: {e}{COLOR_RESET}", flush=True)
 
 def load_product_links(file_path, product_key):
     """Loads product links from a JSON file and returns the URL for the specified product key."""
@@ -155,23 +164,23 @@ def handle_amazon_home_link(driver, current_page_num, base_url):
             EC.presence_of_element_located((By.PARTIAL_LINK_TEXT, "Go to the Amazon.in home page to continue shopping"))
         )
         
-        print("Found 'Go to the Amazon.in home page to continue shopping' link. Clicking it.")
+        print(f"{COLOR_INFO}INFO: Detected 'Go to Amazon.in home page' link. Clicking to proceed...{COLOR_RESET}", flush=True)
         home_link.click()
         
         # Wait for the home page to load
         WebDriverWait(driver, 10).until(
             EC.url_contains("amazon.in") # Assuming it navigates to amazon.in home
         )
-        print("Navigated to Amazon.in home page.")
+        print(f"{COLOR_INFO}INFO: Successfully navigated to Amazon.in home page.{COLOR_RESET}", flush=True)
 
         # Now, navigate back to the correct product search page
         target_url = f"{base_url}&page={current_page_num}" if current_page_num > 1 else base_url
-        print(f"Navigating to product search page {current_page_num}: {target_url}")
+        print(f"{COLOR_INFO}INFO: Navigating back to product search page {current_page_num}. URL: {target_url}{COLOR_RESET}", flush=True)
         driver.get(target_url)
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.TAG_NAME, 'body'))
         )
-        print(f"Successfully navigated to product search page {current_page_num}.")
+        print(f"{COLOR_INFO}INFO: Successfully returned to product search page {current_page_num}.{COLOR_RESET}", flush=True)
         return True # Indicate that the link was found and handled
             
     except Exception as e:
@@ -265,23 +274,27 @@ def save_to_json(data, filename):
 
 def main():
     # Clear the output folder at the beginning
-    print(f"Clearing contents of '{OUTPUT_FOLDER}' folder...")
+    print(f"\n{COLOR_STEP}--- STEP 1: Initializing Scraping Process ---{COLOR_RESET}", flush=True)
+    print(f"{COLOR_STEP}Clearing contents of '{OUTPUT_FOLDER}' folder...{COLOR_RESET}", flush=True)
     clear_output_folder(OUTPUT_FOLDER)
-    print(f"Contents of '{OUTPUT_FOLDER}' cleared.")
+    print(f"{COLOR_STEP}Contents of '{OUTPUT_FOLDER}' cleared.{COLOR_RESET}\n", flush=True)
 
     base_url = load_product_links(PRODUCT_LINKS_FILE, product)
 
     if not base_url:
-        print(f"Error: Product '{product}' not found in {PRODUCT_LINKS_FILE}")
+        print(f"{COLOR_ERROR}ERR: Product '{product}' not found in {PRODUCT_LINKS_FILE}. Please check configuration.{COLOR_RESET}", flush=True)
         return
 
     # Clear the content of the product JSON file at the beginning
     output_filename = f"{product}.json"
+    print(f"{COLOR_STEP}--- STEP 2: Preparing Output File ---{COLOR_RESET}", flush=True)
     if os.path.exists(output_filename):
-        print(f"Clearing content of '{output_filename}'...")
+        print(f"{COLOR_STEP}Clearing existing data in '{output_filename}'...{COLOR_RESET}", flush=True)
         with open(output_filename, 'w', encoding='utf-8') as f:
             json.dump([], f) # Write an empty JSON array
-        print(f"Content of '{output_filename}' cleared.")
+        print(f"{COLOR_STEP}Output preparation complete. '{output_filename}' is now empty.{COLOR_RESET}\n", flush=True)
+    else:
+        print(f"{COLOR_STEP}Output file '{output_filename}' does not exist. It will be created.{COLOR_RESET}\n", flush=True)
 
     page_num = 1
     no_product_pages_count = 0 # Counter for consecutive pages with no non-sponsored products
@@ -291,7 +304,8 @@ def main():
         driver = setup_driver(headless)
         while True:
             current_url = f"{base_url}&page={page_num}" if page_num > 1 else base_url
-            print(f"Scraping page {page_num}: {current_url}")
+            print(f"{COLOR_STEP}--- STEP 3: Scraping Page {page_num} ---{COLOR_RESET}", flush=True)
+            print(f"{COLOR_INFO}INFO: Navigating to URL: {current_url}{COLOR_RESET}", flush=True)
 
             html_content = scrape_page(driver, current_url)
 
@@ -304,7 +318,7 @@ def main():
             if link_was_handled:
                 # If the link was handled, the driver is now on the correct product search page.
                 # We need to re-fetch the HTML content from the current driver state.
-                print(f"Amazon home link handled. Re-fetching HTML content from current driver state for page {page_num}.")
+                print(f"{COLOR_INFO}INFO: Amazon home link successfully handled. Re-fetching HTML content from current driver state for page {page_num}...{COLOR_RESET}", flush=True)
                 html_content = driver.page_source
                 no_product_pages_count = 0 # Reset counter as we've navigated and are on a fresh product page
             
@@ -312,17 +326,17 @@ def main():
             
             if not page_products:
                 no_product_pages_count += 1
-                print(f"No non-sponsored products found on page {page_num}. Consecutive empty pages: {no_product_pages_count}")
+                print(f"{COLOR_WARNING}WARNING: No non-sponsored products found on page {page_num}. Consecutive empty pages: {no_product_pages_count}. Waiting for 3 minutes...{COLOR_RESET}", flush=True)
                 time.sleep(180) # Wait for 3 minutes before trying again
                 if no_product_pages_count >= 3:
-                    print("No non-sponsored products found on 3 consecutive pages. Exiting program.")
+                    print(f"{COLOR_CRITICAL}CRITICAL: No non-sponsored products found on 3 consecutive pages. Terminating scraping process.{COLOR_RESET}", flush=True)
                     break
             else:
                 no_product_pages_count = 0 # Reset counter if products are found
                 # Save products for the current page directly to JSON
                 output_filename = f"{product}.json"
                 save_to_json(page_products, output_filename)
-                print(f"Found {len(page_products)} products on page {page_num}. Appended to {output_filename}.")
+                print(f"{COLOR_SUCCESS}SUCCESS: Found {len(page_products)} products on page {page_num}. Data appended to {output_filename}.{COLOR_RESET}", flush=True)
 
             # Implement a more robust check for next page availability if possible
             # For now, a simple page increment. You might need to check for a "next page" button/link.
@@ -330,14 +344,14 @@ def main():
             time.sleep(random.uniform(2, 5)) # Be polite and avoid hammering the server, random delay
 
     except KeyboardInterrupt:
-        print("\nScraping interrupted by user (KeyboardInterrupt). Saving current progress and exiting.")
+        print(f"\n{COLOR_INFO}INFO: Scraping interrupted by user (KeyboardInterrupt). Saving progress and exiting.{COLOR_RESET}", flush=True)
     except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"{COLOR_ERROR}ERR: An unexpected error occurred: {e}{COLOR_RESET}", flush=True)
     finally:
         if driver:
             driver.quit()
         
-    print("Scraping process finished.")
+    print(f"\n{COLOR_INFO}INFO: Scraping process finished.{COLOR_RESET}", flush=True)
 
 if __name__ == "__main__":
     main()
