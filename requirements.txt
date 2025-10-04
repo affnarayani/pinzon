@@ -3,3 +3,5 @@ beautifulsoup4
 colorama
 webdriver-manager
 selenium-stealth
+python-dotenv
+cryptography
