@@ -15,7 +15,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 # --- Configuration Variables ---
 product = "mobile_phones"  # Manually set by developer, must match key in product_links.json
-headless = False           # Toggle for headless/headful browser mode
+headless = True           # Toggle for headless/headful browser mode
 
 # --- Constants ---
 PRODUCT_LINKS_FILE = "product_links.json"
