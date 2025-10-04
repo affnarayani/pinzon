@@ -327,7 +327,6 @@ def main():
             if not page_products:
                 no_product_pages_count += 1
                 print(f"{COLOR_WARNING}WARNING: No non-sponsored products found on page {page_num}. Consecutive empty pages: {no_product_pages_count}. Waiting for 3 minutes...{COLOR_RESET}", flush=True)
-                time.sleep(180) # Wait for 3 minutes before trying again
                 if no_product_pages_count >= 3:
                     print(f"{COLOR_CRITICAL}CRITICAL: No non-sponsored products found on 3 consecutive pages. Terminating scraping process.{COLOR_RESET}", flush=True)
                     break
