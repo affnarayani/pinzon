@@ -12,12 +12,64 @@ import re
 import html
 from colorama import Fore, Style, init
 from selenium_stealth import stealth
+import datetime
+import threading
 
 # Initialize colorama
 init(autoreset=True)
 
 product_file = "mobile_phones.json"
 headless = True
+
+# Global variables for timing
+RUN_TIME_SECONDS = 0
+GRACE_TIME_SECONDS = 0
+start_time = None
+stop_scraping_event = threading.Event()
+grace_period_active = False
+
+def load_config():
+    global RUN_TIME_SECONDS, GRACE_TIME_SECONDS
+    try:
+        with open('config.json', 'r', encoding='utf-8') as f:
+            config_data = json.load(f)
+            run_time_minutes = 0
+            grace_time_minutes = 0
+            for item in config_data:
+                if "run_time" in item:
+                    run_time_minutes = item["run_time"]
+                if "grace_time" in item:
+                    grace_time_minutes = item["grace_time"]
+            
+            RUN_TIME_SECONDS = run_time_minutes * 60
+            GRACE_TIME_SECONDS = grace_time_minutes * 60
+            print(f"{Fore.CYAN}Config loaded: Run time = {run_time_minutes} minutes ({RUN_TIME_SECONDS}s), Grace time = {grace_time_minutes} minutes ({GRACE_TIME_SECONDS}s){Style.RESET_ALL}")
+    except FileNotFoundError:
+        print(f"{Fore.RED}Error: config.json not found. Using default times.{Style.RESET_ALL}")
+        RUN_TIME_SECONDS = 15 * 60 # Default to 15 minutes
+        GRACE_TIME_SECONDS = 5 * 60 # Default to 5 minutes
+    except json.JSONDecodeError:
+        print(f"{Fore.RED}Error: Could not decode JSON from config.json. Using default times.{Style.RESET_ALL}")
+        RUN_TIME_SECONDS = 15 * 60
+        GRACE_TIME_SECONDS = 5 * 60
+
+def check_time_limit():
+    global grace_period_active
+    if start_time is None:
+        return False
+
+    elapsed_time = (datetime.datetime.now() - start_time).total_seconds()
+
+    if elapsed_time > (RUN_TIME_SECONDS + GRACE_TIME_SECONDS):
+        print(f"{Fore.RED}Total time (run_time + grace_time) exceeded. Stopping scraping.{Style.RESET_ALL}")
+        stop_scraping_event.set()
+        return True
+    elif elapsed_time > RUN_TIME_SECONDS and not grace_period_active:
+        print(f"{Fore.YELLOW}Run time exceeded. Entering grace period for {GRACE_TIME_SECONDS / 60} minutes.{Style.RESET_ALL}")
+        grace_period_active = True
+    
+    return False
+
 
 def get_main_image_element_safely(driver):
     """Helper function to safely get the main image element."""
@@ -99,6 +151,8 @@ def check_and_click_continue_shopping(driver):
 
 def _scrape_single_product_details(driver, product):
     """Scrapes details for a single product, including images and product details."""
+    # The check for grace_period_active and skipping new products is now handled in the main loop.
+
     product_url = product.get("product_url")
     product_name = product.get("product_name", "Unknown Product")
     if not product_url:
@@ -126,9 +180,16 @@ def _scrape_single_product_details(driver, product):
     # Define the allowed image URL endings
     allowed_endings = ("SX679_.jpg")
 
+    # Determine image retry logic based on user's specific criteria:
+    # 5 attempts if no images exist at all (current_image_url_count == 0).
+    # Otherwise (at least 1 image exists), only one attempt for images is sufficient.
+    current_image_url_count = sum(1 for key in product if key.startswith("image_url_"))
+    
+    max_image_attempts = 5 if (current_image_url_count == 0) else 1
+
     # Image extraction with retry mechanism
-    for attempt in range(5):
-        print(f"{Fore.CYAN}  Attempting image extraction (Attempt {attempt + 1})...{Style.RESET_ALL}")
+    for attempt in range(max_image_attempts):
+        print(f"{Fore.CYAN}  Attempting image extraction (Attempt {attempt + 1}/{max_image_attempts})...{Style.RESET_ALL}")
         
         # Check for and click 'Continue shopping' button
         if check_and_click_continue_shopping(driver):
@@ -184,12 +245,12 @@ def _scrape_single_product_details(driver, product):
 
                 extract_image_urls_from_page(driver, image_urls, allowed_endings)
 
-            except Exception as e:
-                print(f"{Fore.YELLOW}  Error during thumbnail click or image extraction for thumbnail {i+1}: {e}{Style.RESET_ALL}")
+            except Exception: # Removed 'as e' to prevent printing the exception object
+                print(f"{Fore.YELLOW}  Error during thumbnail click or image extraction for thumbnail {i+1}.{Style.RESET_ALL}")
                 # traceback.print_exc() # Suppress stacktrace as requested
                 continue
         
-        if len(image_urls) >= 5:
+        if len(image_urls) >= 5 or max_image_attempts == 1: # Break if 5 images found OR if only 1 attempt was intended
             print(f"{Fore.GREEN}  Successfully scraped {len(image_urls)} images (Attempt {attempt + 1}){Style.RESET_ALL}")
             break
         else:
@@ -197,8 +258,11 @@ def _scrape_single_product_details(driver, product):
             driver.refresh()
             time.sleep(5)
     
-    if len(image_urls) < 5:
+    if len(image_urls) < 5 and max_image_attempts == 5:
         print(f"{Fore.YELLOW}  Could not scrape 5 images after multiple attempts for {product_name}. Found {len(image_urls)}.{Style.RESET_ALL}")
+    elif len(image_urls) < 1 and max_image_attempts == 1:
+        print(f"{Fore.YELLOW}  Could not scrape any images on first attempt for {product_name}. Found {len(image_urls)}.{Style.RESET_ALL}")
+
 
     # Scrape product details with retry mechanism
     details = []
@@ -267,6 +331,9 @@ def _scrape_single_product_details(driver, product):
     product.update(new_product)
 
 def scrape_product_details():
+    global start_time, grace_period_active
+    load_config() # Load run_time and grace_time from config.json
+
     products_data = []
     try:
         with open(product_file, 'r', encoding='utf-8') as f:
@@ -302,15 +369,29 @@ def scrape_product_details():
             fix_hairline=True,
             )
 
+    start_time = datetime.datetime.now() # Record the start time of the scraping process
+
     try:
         for i, product in enumerate(products_data):
+            if stop_scraping_event.is_set():
+                print(f"{Fore.RED}Stopping scraping due to time limit.{Style.RESET_ALL}")
+                break
+
             print(f"\n{Fore.WHITE}--- Processing product {i+1}/{len(products_data)} ---{Style.RESET_ALL}")
             
             image_url_count = sum(1 for key in product if key.startswith("image_url_"))
             
             # Condition to determine if scraping is needed
-            # Scrape if product_details is missing, or is empty, or if image_url_count is less than 5
-            needs_scraping = not ("product_details" in product and product["product_details"] and image_url_count >= 5)
+            # Scrape if product_details is missing/empty OR if there are no images.
+            # If product_details exists and is not empty AND at least 1 image exists, skip entirely.
+            has_product_details = "product_details" in product and product["product_details"]
+            has_at_least_one_image = image_url_count >= 1
+            
+            needs_scraping = not (has_product_details and has_at_least_one_image)
+
+            if grace_period_active and needs_scraping:
+                print(f"{Fore.YELLOW}Grace period active. Stopping new product scraping and exiting.{Style.RESET_ALL}")
+                break # Exit the loop immediately if grace period is active and a new product needs scraping
 
             if needs_scraping:
                 _scrape_single_product_details(driver, product)
@@ -320,7 +401,11 @@ def scrape_product_details():
                     json.dump(products_data, f, indent=4, ensure_ascii=False)
                 print(f"{Fore.GREEN}  Successfully updated '{product.get('product_name', 'Unknown Product')}' in {product_file}{Style.RESET_ALL}")
             else:
-                print(f"{Fore.YELLOW}  Skipping '{product.get('product_name', 'Unknown Product')}' - already has product details and at least 5 images.{Style.RESET_ALL}")
+                print(f"{Fore.YELLOW}  Skipping '{product.get('product_name', 'Unknown Product')}' - already has product details and at least 1 image.{Style.RESET_ALL}")
+            
+            # Check time limit after processing each product
+            if check_time_limit():
+                break
                 
     except KeyboardInterrupt:
         print(f"\n{Fore.RED}KeyboardInterrupt detected. Exiting gracefully...{Style.RESET_ALL}")
