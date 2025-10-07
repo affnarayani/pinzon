@@ -182,10 +182,10 @@ def _scrape_single_product_details(driver, product):
 
     # Determine image retry logic based on user's specific criteria:
     # 5 attempts if no images exist at all (current_image_url_count == 0).
-    # Otherwise (at least 1 image exists), only one attempt for images is sufficient.
+    # Otherwise (at least 1 image exists), zero attempts for images.
     current_image_url_count = sum(1 for key in product if key.startswith("image_url_"))
     
-    max_image_attempts = 5 if (current_image_url_count == 0) else 1
+    max_image_attempts = 5 if (current_image_url_count == 0) else 0
 
     # Image extraction with retry mechanism
     for attempt in range(max_image_attempts):
@@ -250,18 +250,30 @@ def _scrape_single_product_details(driver, product):
                 # traceback.print_exc() # Suppress stacktrace as requested
                 continue
         
-        if len(image_urls) >= 5 or max_image_attempts == 1: # Break if 5 images found OR if only 1 attempt was intended
+        if len(image_urls) >= 1: # Break if at least 1 image is found
             print(f"{Fore.GREEN}  Successfully scraped {len(image_urls)} images (Attempt {attempt + 1}){Style.RESET_ALL}")
             break
-        else:
+        elif attempt < max_image_attempts - 1: # Only refresh if more attempts are allowed
             print(f"{Fore.YELLOW}  Only found {len(image_urls)} images on attempt {attempt + 1}. Refreshing page for images...{Style.RESET_ALL}")
             driver.refresh()
             time.sleep(5)
+        else: # Last attempt and still no images
+            print(f"{Fore.YELLOW}  Could not scrape any images after {max_image_attempts} attempts for {product_name}. Found {len(image_urls)}.{Style.RESET_ALL}")
+            break # Exit the image attempt loop
     
-    if len(image_urls) < 5 and max_image_attempts == 5:
-        print(f"{Fore.YELLOW}  Could not scrape 5 images after multiple attempts for {product_name}. Found {len(image_urls)}.{Style.RESET_ALL}")
-    elif len(image_urls) < 1 and max_image_attempts == 1:
-        print(f"{Fore.YELLOW}  Could not scrape any images on first attempt for {product_name}. Found {len(image_urls)}.{Style.RESET_ALL}")
+    # The final messages about scraping 5 images or no images are now handled within the loop.
+    # Removed redundant checks here.
+
+
+    # Scrape product details with retry mechanism
+    details = []
+    product_details_str = ""
+    for attempt in range(5): # Retry up to 5 times
+        # Check for and click 'Continue shopping' button
+        if check_and_click_continue_shopping(driver):
+            print(f"{Fore.BLUE}  Retrying product details extraction after clicking 'Continue shopping'.{Style.RESET_ALL}")
+            driver.get(product_url) # Re-navigate to ensure fresh page state
+            time.sleep(3)
 
 
     # Scrape product details with retry mechanism
