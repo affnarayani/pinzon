@@ -1,8 +1,8 @@
 [
     {
-        "run_time": 5
+        "run_time": 300
     },
     {
-        "grace_time": 2
+        "grace_time": 30
     }
 ]
