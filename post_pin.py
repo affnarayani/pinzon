@@ -16,7 +16,7 @@ PINTEREST_EMAIL = os.getenv("PINTEREST_EMAIL")
 PINTEREST_PASSWORD = os.getenv("PINTEREST_PASSWORD")
 
 # Configuration Variables
-headless = False # Toggle for headless/headful browser mode
+headless = True # Toggle for headless/headful browser mode
 
 def setup_driver(headless_mode):
     """Sets up the Chrome WebDriver with stealth options."""
@@ -106,10 +106,6 @@ def setup_driver(headless_mode):
                 runtime: {},
                 // Add other properties if needed
             };
-            // Further spoofing for window.outerWidth/innerWidth if necessary
-            // This might require more dynamic adjustments based on actual browser window
-            window.outerWidth = window.innerWidth;
-            window.outerHeight = window.innerHeight;
         """
     })
     return driver
@@ -149,16 +145,15 @@ def login_to_pinterest(driver, email, password):
     # Wait for successful login by checking for a known element on the dashboard
     # This is more robust than URL checks as URLs can vary or have redirects.
     # Using a generic data-test-id for the main content area.
+    aff_deals_xpath = "/html/body/div[1]/div[1]/div/div[3]/div/div/div/div[1]/div[2]/div/div/div/div[1]/div/div[1]/div/div[2]/div[1]/div[1]/h1/a"
     WebDriverWait(driver, 30).until(
-        EC.presence_of_element_located((By.XPATH, "//div[@data-test-id='full-page-layout']"))
+        EC.visibility_of_element_located((By.XPATH, aff_deals_xpath))
     )
-    print("Successfully logged in to Pinterest.")
-
-def save_cookies(driver, filename="cookies.json"):
-    """Saves the browser cookies to a file."""
-    with open(filename, "w") as f:
-        json.dump(driver.get_cookies(), f)
-    print(f"Cookies saved to {filename}")
+    aff_deals_element = driver.find_element(By.XPATH, aff_deals_xpath)
+    if "Aff Deals" in aff_deals_element.text:
+        print("Successfully logged in to Pinterest and 'Aff Deals' element found.")
+    else:
+        raise Exception("Login successful, but 'Aff Deals' element text not found.")
 
 def main():
     if not PINTEREST_EMAIL or not PINTEREST_PASSWORD:
@@ -169,7 +164,6 @@ def main():
     try:
         driver = setup_driver(headless) # Pass the headless variable
         login_to_pinterest(driver, PINTEREST_EMAIL, PINTEREST_PASSWORD)
-        save_cookies(driver)
         print("Waiting for 30 seconds before closing the browser...")
         time.sleep(30)
     except Exception as e:
