@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '30 21 * * *' # Runs everyday at 3 AM IST (21:30 UTC)
-    - cron: '30 9 * * *' # Runs everyday at 3 PM IST (09:30 UTC)
+    - cron: '30 5 * * *'  # Runs everyday at 11 AM IST (05:30 UTC)
+    - cron: '30 13 * * *' # Runs everyday at 7 PM IST (13:30 UTC)
 
 concurrency:
   group: ${{ github.workflow }}
