@@ -264,6 +264,10 @@ def _scrape_single_product_details(driver, product):
     # The final messages about scraping 5 images or no images are now handled within the loop.
     # Removed redundant checks here.
 
+    images_found = len(image_urls) > 0
+    if not images_found:
+        print(f"{Fore.RED}  No images found for {product_name} after {max_image_attempts} attempts. Skipping product details scraping.{Style.RESET_ALL}")
+        return False, False # Return False for both product_details_found and images_found
 
     # Scrape product details with retry mechanism
     details = []
@@ -342,6 +346,11 @@ def _scrape_single_product_details(driver, product):
     product.clear()
     product.update(new_product)
 
+    # Determine if product details were successfully found
+    product_details_found = bool(product_details_str)
+    
+    return product_details_found, images_found
+
 def scrape_product_details():
     global start_time, grace_period_active
     load_config() # Load run_time and grace_time from config.json
@@ -383,12 +392,14 @@ def scrape_product_details():
 
     start_time = datetime.datetime.now() # Record the start time of the scraping process
 
+    i = 0
     try:
-        for i, product in enumerate(products_data):
+        while i < len(products_data):
             if stop_scraping_event.is_set():
                 print(f"{Fore.RED}Stopping scraping due to time limit.{Style.RESET_ALL}")
                 break
 
+            product = products_data[i]
             print(f"\n{Fore.WHITE}--- Processing product {i+1}/{len(products_data)} ---{Style.RESET_ALL}")
             
             image_url_count = sum(1 for key in product if key.startswith("image_url_"))
@@ -406,15 +417,23 @@ def scrape_product_details():
                 break # Exit the loop immediately if grace period is active and a new product needs scraping
 
             if needs_scraping:
-                _scrape_single_product_details(driver, product)
+                product_details_found, images_found = _scrape_single_product_details(driver, product)
                 
-                # Write the updated data back to the file after each product
-                with open(product_file, 'w', encoding='utf-8') as f:
-                    json.dump(products_data, f, indent=4, ensure_ascii=False)
-                print(f"{Fore.GREEN}  Successfully updated '{product.get('product_name', 'Unknown Product')}' in {product_file}{Style.RESET_ALL}")
+                if not product_details_found or not images_found:
+                    print(f"{Fore.RED}  Removing product '{product.get('product_name', 'Unknown Product')}' due to missing product details ({product_details_found}) or images ({images_found}).{Style.RESET_ALL}")
+                    products_data.pop(i) # Remove the product, do not increment i
+                else:
+                    print(f"{Fore.GREEN}  Successfully scraped '{product.get('product_name', 'Unknown Product')}' with details and images.{Style.RESET_ALL}")
+                    i += 1 # Increment i only if product is kept
             else:
                 print(f"{Fore.YELLOW}  Skipping '{product.get('product_name', 'Unknown Product')}' - already has product details and at least 1 image.{Style.RESET_ALL}")
+                i += 1 # Increment i for skipped products
             
+            # Write the updated data back to the file after each product is processed (or removed)
+            with open(product_file, 'w', encoding='utf-8') as f:
+                json.dump(products_data, f, indent=4, ensure_ascii=False)
+            print(f"{Fore.GREEN}  Updated {product_file} with current state ({len(products_data)} products).{Style.RESET_ALL}")
+
             # Check time limit after processing each product
             if check_time_limit():
                 break
