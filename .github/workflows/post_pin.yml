@@ -1,9 +1,6 @@
 name: Pinterest Pin Poster
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:

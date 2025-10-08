@@ -222,14 +222,14 @@ def main():
         login_to_pinterest(driver, PINTEREST_EMAIL, PINTEREST_PASSWORD)
 
         # Load product data
-        with open('test_test.json', 'r', encoding='utf-8') as f:
+        with open('mobile_phones.json', 'r', encoding='utf-8') as f:
             products = json.load(f)
 
         # Filter out already published products
         unpublished_products = [p for p in products if p.get("published") != True]
 
         if not unpublished_products:
-            print("No unpublished products found in test_test.json. Exiting.")
+            print("No unpublished products found in mobile_phones.json. Exiting.")
             return
 
         # Process only one product per run
@@ -409,8 +409,8 @@ def main():
         time.sleep(5) # Give time for publishing to complete
 
         # Update mobile_phones.json with "published": True
-        # Read the content of test_test.json again to ensure it's fresh
-        with open('test_test.json', 'r+', encoding='utf-8') as f:
+        # Read the content of mobile_phones.json again to ensure it's fresh
+        with open('mobile_phones.json', 'r+', encoding='utf-8') as f:
             all_products_data = json.load(f)
             # Find the product that was just processed and mark it as published
             for i, p in enumerate(all_products_data):
@@ -420,7 +420,7 @@ def main():
             f.seek(0) # Rewind to the beginning of the file
             json.dump(all_products_data, f, indent=4, ensure_ascii=False)
             f.truncate() # Truncate any remaining old content
-        print(f"Product '{product_name}' marked as published in test_test.json.")
+        print(f"Product '{product_name}' marked as published in mobile_phones.json.")
 
         # The loop is already effectively broken by processing only the first unpublished product.
         pass
