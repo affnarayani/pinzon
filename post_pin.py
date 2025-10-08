@@ -230,8 +230,8 @@ def main():
         login_to_pinterest(driver, PINTEREST_EMAIL, PINTEREST_PASSWORD)
 
         # Load product data
-        print("\n\033[94m[STEP]\033[0m Loading product data from \033[90mtest_test.json\033[0m...", flush=True)
-        with open('test_test.json', 'r', encoding='utf-8') as f:
+        print("\n\033[94m[STEP]\033[0m Loading product data from \033[90mmobile_phones.json\033[0m...", flush=True)
+        with open('mobile_phones.json', 'r', encoding='utf-8') as f:
             products = json.load(f)
         print(f"\033[92m[SUCCESS]\033[0m Loaded {len(products)} products.", flush=True)
 
@@ -239,7 +239,7 @@ def main():
         unpublished_products = [p for p in products if p.get("published") != True]
 
         if not unpublished_products:
-            print("\n\033[93m[WARNING]\033[0m No unpublished products found in \033[90mtest_test.json\033[0m. Exiting.", flush=True)
+            print("\n\033[93m[WARNING]\033[0m No unpublished products found in \033[90mmobile_phones.json\033[0m. Exiting.", flush=True)
             return
 
         # Process only one product per run
@@ -450,9 +450,9 @@ def main():
         time.sleep(5) # Give time for publishing to complete
         print("\033[96m[INFO]\033[0m Waited 5 seconds for publishing to complete.", flush=True)
 
-        # Update test_test.json with "published": True
-        print(f"\n\033[94m[STEP]\033[0m Marking product '\033[1m{product_name}\033[0m' as published in \033[90mtest_test.json\033[0m...", flush=True)
-        with open('test_test.json', 'r+', encoding='utf-8') as f:
+        # Update mobile_phones.json with "published": True
+        print(f"\n\033[94m[STEP]\033[0m Marking product '\033[1m{product_name}\033[0m' as published in \033[90mmobile_phones.json\033[0m...", flush=True)
+        with open('mobile_phones.json', 'r+', encoding='utf-8') as f:
             all_products_data = json.load(f)
             # Find the product that was just processed and mark it as published
             for i, p in enumerate(all_products_data):
@@ -462,7 +462,7 @@ def main():
             f.seek(0) # Rewind to the beginning of the file
             json.dump(all_products_data, f, indent=4, ensure_ascii=False)
             f.truncate() # Truncate any remaining old content
-        print(f"\033[92m[SUCCESS]\033[0m Product '\033[1m{product_name}\033[0m' marked as published in \033[90mtest_test.json\033[0m.", flush=True)
+        print(f"\033[92m[SUCCESS]\033[0m Product '\033[1m{product_name}\033[0m' marked as published in \033[90mmobile_phones.json\033[0m.", flush=True)
 
         # The loop is already effectively broken by processing only the first unpublished product.
         pass
