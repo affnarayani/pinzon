@@ -15,6 +15,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         fetch-depth: 0 # Fetch all history for pushing changes
+        token: ${{ secrets.PAT_TOKEN }} # Use PAT for write permissions
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -47,4 +48,4 @@ jobs:
       run: |
         git add test_test.json
         git commit -m "Update test_test.json after Pinterest posting" || echo "No changes to commit"
-        git push
+        git push https://github.com/${{ github.repository }}.git
