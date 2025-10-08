@@ -45,7 +45,7 @@ if GEMINI_API_KEY:
 else:
     print("GEMINI_API_KEY not found in .env file. Product descriptions will not be summarized.")
 
-# Configuration Variables
+# Configuration Variables.
 headless = True # Toggle for headless/headful browser mode
 
 def setup_driver(headless_mode):
