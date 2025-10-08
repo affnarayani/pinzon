@@ -91,7 +91,7 @@ def extract_image_urls_from_page(driver, image_urls_set, allowed_endings):
         if initial_src and initial_src.startswith("https://m.media-amazon.com/images/I/") and initial_src.endswith(allowed_endings):
             image_urls_set.add(initial_src)
     except Exception as e:
-        print(f"{Fore.YELLOW}Could not get initial main image: {e}{Style.RESET_ALL}")
+        print(f"{Fore.YELLOW}Could not get initial main image: {Style.RESET_ALL}")
 
     # Also look for image URLs in 'ivThumbImage' divs
     iv_thumb_elements = driver.find_elements(By.CSS_SELECTOR, "div.ivThumbImage")
@@ -200,7 +200,7 @@ def _scrape_single_product_details(driver, product):
                     EC.presence_of_element_located((By.CSS_SELECTOR, "#altImages .item, .image-block .a-list-item"))
                 )
             except Exception as e:
-                print(f"{Fore.YELLOW}  Warning: Thumbnail elements not present after 'Continue shopping' click: {e}{Style.RESET_ALL}")
+                print(f"{Fore.YELLOW}  Warning: Thumbnail elements not present after 'Continue shopping' click {Style.RESET_ALL}")
             time.sleep(3)
             thumbnail_elements = driver.find_elements(By.CSS_SELECTOR, "#altImages .item, .image-block .a-list-item")
             if not thumbnail_elements:
@@ -313,7 +313,7 @@ def _scrape_single_product_details(driver, product):
                 driver.refresh()
                 time.sleep(5) # Wait after refresh
         except Exception as e:
-            print(f"{Fore.YELLOW}  Could not find product details section on attempt {attempt + 1}: {e}{Style.RESET_ALL}")
+            print(f"{Fore.YELLOW}  Could not find product details section on attempt {attempt + 1}: {Style.RESET_ALL}")
             if attempt < 4: # Don't refresh on the last attempt if it failed
                 driver.refresh()
                 time.sleep(5) # Wait after refresh
@@ -424,7 +424,7 @@ def scrape_product_details():
     except webdriver.common.exceptions.NoSuchWindowException:
         print(f"{Fore.RED}Browser window closed unexpectedly. Exiting gracefully...{Style.RESET_ALL}")
     except Exception as e:
-        print(f"{Fore.RED}An unexpected error occurred: {e}{Style.RESET_ALL}")
+        print(f"{Fore.RED}An unexpected error occurred: {Style.RESET_ALL}")
         # traceback.print_exc() # Suppress stacktrace as requested
     finally:
         if driver:
