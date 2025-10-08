@@ -4,4 +4,5 @@ colorama
 webdriver-manager
 selenium-stealth
 python-dotenv
-cryptography
+google-generativeai
+absl-py

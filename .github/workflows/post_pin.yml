@@ -1,22 +1,50 @@
-name: Post Pin Workflow
+name: Pinterest Pin Poster
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
-  run-post-pin:
+  run-pinterest-poster:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-      - name: Run post_pin.py
-        env:
-          PINTEREST_EMAIL: ${{ secrets.PINTEREST_EMAIL }}
-          PINTEREST_PASSWORD: ${{ secrets.PINTEREST_PASSWORD }}
-          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
-        run: python post_pin.py
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 # Fetch all history for pushing changes
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x' # Use a recent Python version
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Install Chrome
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable
+
+    - name: Run Pinterest Pin Poster
+      env:
+        PINTEREST_EMAIL: ${{ secrets.PINTEREST_EMAIL }}
+        PINTEREST_PASSWORD: ${{ secrets.PINTEREST_PASSWORD }}
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: python post_pin.py
+
+    - name: Configure Git
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "github-actions@github.com"
+
+    - name: Commit and Push changes
+      run: |
+        git add test_test.json
+        git commit -m "Update test_test.json after Pinterest posting" || echo "No changes to commit"
+        git push
