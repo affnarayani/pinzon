@@ -15,4 +15,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run post_pin.py
+        env:
+          PINTEREST_EMAIL: ${{ secrets.PINTEREST_EMAIL }}
+          PINTEREST_PASSWORD: ${{ secrets.PINTEREST_PASSWORD }}
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: python post_pin.py
