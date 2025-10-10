@@ -45,6 +45,6 @@ jobs:
 
     - name: Commit and Push changes
       run: |
-        git add mobile_phones.json
-        git commit -m "Update mobile_phones.json after Pinterest posting" || echo "No changes to commit"
+        git add mobile_phones.json asin.json
+        git commit -m "Update mobile_phones.json and asin.json after Pinterest posting" || echo "No changes to commit"
         git push https://github.com/${{ github.repository }}.git
