@@ -214,6 +214,25 @@ def download_images(image_urls, temp_dir):
             print(f"\033[91m[ERROR]\033[0m Error downloading {sanitized_url}: {e}", flush=True)
     return downloaded_image_paths
 
+def load_existing_asins():
+    """Loads existing ASINs from asin.json, handling empty or malformed files."""
+    asin_data = []
+    try:
+        if os.path.exists('asin.json') and os.path.getsize('asin.json') > 0:
+            with open('asin.json', 'r', encoding='utf-8') as f:
+                asin_data = json.load(f)
+        elif not os.path.exists('asin.json'):
+            # Create the file if it doesn't exist
+            with open('asin.json', 'w', encoding='utf-8') as f:
+                json.dump([], f) # Write an empty JSON array
+    except json.JSONDecodeError:
+        print(f"\033[93m[WARNING]\033[0m asin.json is malformed or empty. Initializing with an empty list.", flush=True)
+        asin_data = []
+    except Exception as e:
+        print(f"\033[91m[ERROR]\033[0m Error reading asin.json: {e}. Initializing with an empty list.", flush=True)
+        asin_data = []
+    return asin_data
+
 def main():
     if not PINTEREST_EMAIL or not PINTEREST_PASSWORD:
         print("\n\033[91m[ERROR]\033[0m PINTEREST_EMAIL and PINTEREST_PASSWORD must be set in the .env file. Exiting.", flush=True)
@@ -235,11 +254,22 @@ def main():
             products = json.load(f)
         print(f"\033[92m[SUCCESS]\033[0m Loaded {len(products)} products.", flush=True)
 
-        # Filter out already published products
-        unpublished_products = [p for p in products if p.get("published") != True]
+        # Load existing ASINs
+        existing_asins = load_existing_asins()
+        print(f"\033[96m[INFO]\033[0m Loaded {len(existing_asins)} existing ASINs from \033[90masin.json\033[0m.", flush=True)
+
+        # Filter out already published products and products with existing ASINs
+        unpublished_products = []
+        for p in products:
+            if p.get("published") != True:
+                product_asin = extract_asin_from_url(p.get("product_url", ""))
+                if product_asin and product_asin in existing_asins:
+                    print(f"\033[93m[WARNING]\033[0m Product '\033[1m{p.get('product_name', 'N/A')}\033[0m' (ASIN: {product_asin}) already exists in \033[90masin.json\033[0m. Skipping.", flush=True)
+                else:
+                    unpublished_products.append(p)
 
         if not unpublished_products:
-            print("\n\033[93m[WARNING]\033[0m No unpublished products found in \033[90mmobile_phones.json\033[0m. Exiting.", flush=True)
+            print("\n\033[93m[WARNING]\033[0m No unpublished products or products with new ASINs found. Exiting.", flush=True)
             return
 
         # Process only one product per run
@@ -464,6 +494,36 @@ def main():
             f.truncate() # Truncate any remaining old content
         print(f"\033[92m[SUCCESS]\033[0m Product '\033[1m{product_name}\033[0m' marked as published in \033[90mmobile_phones.json\033[0m.", flush=True)
 
+        # Extract ASIN and append to asin.json
+        asin = extract_asin_from_url(product_url)
+        if asin:
+            print(f"\n\033[94m[STEP]\033[0m Extracted ASIN: \033[1m{asin}\033[0m. Appending to \033[90masin.json\033[0m...", flush=True)
+            asin_data = []
+            try:
+                if os.path.exists('asin.json') and os.path.getsize('asin.json') > 0:
+                    with open('asin.json', 'r', encoding='utf-8') as f:
+                        asin_data = json.load(f)
+                elif not os.path.exists('asin.json'):
+                    # Create the file if it doesn't exist
+                    with open('asin.json', 'w', encoding='utf-8') as f:
+                        json.dump([], f) # Write an empty JSON array
+            except json.JSONDecodeError:
+                print(f"\033[93m[WARNING]\033[0m asin.json is malformed or empty. Initializing with an empty list.", flush=True)
+                asin_data = []
+            except Exception as e:
+                print(f"\033[91m[ERROR]\033[0m Error reading asin.json: {e}. Initializing with an empty list.", flush=True)
+                asin_data = []
+
+            if asin not in asin_data:
+                asin_data.append(asin)
+                with open('asin.json', 'w', encoding='utf-8') as f:
+                    json.dump(asin_data, f, indent=4, ensure_ascii=False)
+                print(f"\033[92m[SUCCESS]\033[0m ASIN '\033[1m{asin}\033[0m' appended to \033[90masin.json\033[0m.", flush=True)
+            else:
+                print(f"\033[96m[INFO]\033[0m ASIN '\033[1m{asin}\033[0m' already exists in \033[90masin.json\033[0m. Skipping.", flush=True)
+        else:
+            print(f"\033[93m[WARNING]\033[0m No ASIN extracted from product URL: \033[90m{product_url}\033[0m. Skipping asin.json update.", flush=True)
+
         # The loop is already effectively broken by processing only the first unpublished product.
         pass
 
@@ -534,6 +594,14 @@ def rewrite_product_name_with_gemini(product_name):
     except Exception as e:
         print(f"\033[91m[ERROR]\033[0m Error rewriting product name with Gemini API: {e}. Returning original name.", flush=True)
         return product_name
+
+def extract_asin_from_url(url):
+    """Extracts the ASIN from an Amazon product URL."""
+    import re
+    match = re.search(r"[/dp/|/gp/product/]([A-Z0-9]{10})", url)
+    if match:
+        return match.group(1)
+    return None
 
 if __name__ == "__main__":
     main()
