@@ -127,7 +127,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/81GL8Y5GK9L._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/81ncbaMp+lL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/71PNpGSF9mL._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/81P7bWuGIlL._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/81P7bWuGIlL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Apple iPhone 15 (128 GB) - Green",
