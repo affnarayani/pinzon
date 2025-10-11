@@ -244,7 +244,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/71bYDtvWjRL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/81LJz8N0sCL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/81CQZB2t52L._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/61GswAe0VqL._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/61GswAe0VqL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Samsung Galaxy M06 5G (Sage Green, 6GB RAM, 128 GB Storage) | MediaTek Dimensity 6300 | AnTuTu Score 422K+ | 12 5G Bands| 25W Fast Charging | 4 Gen of OS Upgrades | Without Charger",
