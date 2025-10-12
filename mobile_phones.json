@@ -610,7 +610,8 @@
         "image_url_1": "https://m.media-amazon.com/images/I/61zZATvUU2L._SX679_.jpg",
         "image_url_2": "https://m.media-amazon.com/images/I/7192MEJSITL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/61YfJEGeqDL._SX679_.jpg",
-        "image_url_4": "https://m.media-amazon.com/images/I/61QTHXKxYeL._SX679_.jpg"
+        "image_url_4": "https://m.media-amazon.com/images/I/61QTHXKxYeL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Samsung Galaxy A55 5G (Awesome Iceblue, 8GB RAM, 128GB Storage) | AI | Metal Frame | 50 MP Main Camera (OIS) | Super HDR Video| Nightography | IP67 | Corning Gorilla Glass Victus+ | sAMOLED Display",
