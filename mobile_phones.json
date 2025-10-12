@@ -504,7 +504,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/71vYbF44a1L._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/61yMCWNcyoL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/61YMxL8AUlL._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/61Vb6GsQgrL._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/61Vb6GsQgrL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "OnePlus Nord CE4 Lite 5G (Mega Blue, 8GB RAM, 128GB Storage)",
