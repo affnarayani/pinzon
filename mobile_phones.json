@@ -657,7 +657,8 @@
         "image_url_1": "https://m.media-amazon.com/images/I/61ca566nQ0L._SX679_.jpg",
         "image_url_2": "https://m.media-amazon.com/images/I/71lzm-duBKL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/61zZATvUU2L._SX679_.jpg",
-        "image_url_4": "https://m.media-amazon.com/images/I/5122ZeBln8L._SX679_.jpg"
+        "image_url_4": "https://m.media-amazon.com/images/I/5122ZeBln8L._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "OnePlus Nord CE4 (Dark Chrome, 8GB RAM, 128GB Storage) | Lifetime Display Warranty | Qualcomm® Snapdragon™ 7 Gen 3 - Best in The Segment | 50 MP Camera with OIS",
