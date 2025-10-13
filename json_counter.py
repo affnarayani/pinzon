@@ -62,5 +62,50 @@ def count_products(json_file_path):
     print(f"{COLOR_MAGENTA}Total number of products without product_details but with at least one image URL: {COLOR_YELLOW}{products_with_images_only}{COLOR_RESET}")
     print(f"{COLOR_MAGENTA}Total number of products without product_details and without any image URL: {COLOR_YELLOW}{products_without_details_and_images}{COLOR_RESET}")
 
+def count_published_mobile_phones(json_file_path):
+    published_count = 0
+    try:
+        with open(json_file_path, 'r', encoding='utf-8') as f:
+            for line in f:
+                if '"published": true' in line:
+                    published_count += 1
+    except FileNotFoundError:
+        print(f"{COLOR_RED}Error: File not found at {json_file_path}{COLOR_RESET}")
+        return
+    except Exception as e:
+        print(f"{COLOR_RED}An unexpected error occurred while counting published mobile phones: {e}{COLOR_RESET}")
+        return
+
+    print(f"{COLOR_MAGENTA}Total number of elements with \"published\": true in {json_file_path}: {COLOR_YELLOW}{published_count}{COLOR_RESET}")
+    return published_count
+
+def count_asin_entries(json_file_path):
+    asin_count = 0
+    try:
+        with open(json_file_path, 'r', encoding='utf-8') as f:
+            asin_data = json.load(f)
+        
+        if isinstance(asin_data, list):
+            asin_count = len(asin_data)
+        else:
+            print(f"{COLOR_RED}Error: Expected a JSON array in {json_file_path}, but got {type(asin_data)}{COLOR_RESET}")
+            return
+
+    except FileNotFoundError:
+        print(f"{COLOR_RED}Error: File not found at {json_file_path}{COLOR_RESET}")
+        return
+    except json.JSONDecodeError as e:
+        print(f"{COLOR_RED}Error: Could not decode JSON from {json_file_path}. Details: {e}{COLOR_RESET}")
+        return
+    except Exception as e:
+        print(f"{COLOR_RED}An unexpected error occurred while counting ASIN entries: {e}{COLOR_RESET}")
+        return
+
+    print(f"{COLOR_MAGENTA}Total number of ASIN entries in {json_file_path}: {COLOR_YELLOW}{asin_count}{COLOR_RESET}")
+    return asin_count
+
 if __name__ == "__main__":
     count_products('mobile_phones.json')
+    print("="*90) # Separator for better readability
+    count_published_mobile_phones('mobile_phones.json')
+    count_asin_entries('asin.json')
