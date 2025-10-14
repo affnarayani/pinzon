@@ -781,7 +781,8 @@
         "image_url_1": "https://m.media-amazon.com/images/I/61zZATvUU2L._SX679_.jpg",
         "image_url_2": "https://m.media-amazon.com/images/I/7192MEJSITL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/61YfJEGeqDL._SX679_.jpg",
-        "image_url_4": "https://m.media-amazon.com/images/I/61QTHXKxYeL._SX679_.jpg"
+        "image_url_4": "https://m.media-amazon.com/images/I/61QTHXKxYeL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Apple iPhone 15 (256 GB) - Black",
