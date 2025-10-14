@@ -943,7 +943,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/81oveNuB3TL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/71auR6K7DpL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/81Dj2bK6ArL._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/81bR+0rER-L._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/81bR+0rER-L._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "VIVO T4x (Pronto Purple, 6GB + 128GB)",
