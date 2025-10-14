@@ -852,7 +852,8 @@
         "image_url_1": "https://m.media-amazon.com/images/I/51lzrfwg4pL._SX679_.jpg",
         "image_url_2": "https://m.media-amazon.com/images/I/61cwB-UmBQL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/61zZATvUU2L._SX679_.jpg",
-        "image_url_4": "https://m.media-amazon.com/images/I/71lzm-duBKL._SX679_.jpg"
+        "image_url_4": "https://m.media-amazon.com/images/I/71lzm-duBKL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Samsung Galaxy A55 5G (Awesome Navy, 8GB RAM, 256GB Storage) | AI | Metal Frame | 50 MP Main Camera (OIS) | Super HDR Video| Nightography | IP67 | Corning Gorilla Glass Victus+ | sAMOLED Display",
