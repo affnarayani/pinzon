@@ -955,7 +955,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/81mycCR0HJL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/816KcbHvi0L._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/71hVYrdEbKL._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/719ohKdmv8L._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/719ohKdmv8L._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "POCO C75 5G, Aqua Bliss (4GB, 64GB)",
