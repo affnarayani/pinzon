@@ -1075,7 +1075,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/516IO6TPGIL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/712CBkmhLhL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/61f4dTush1L._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/71v2jVh6nIL._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/71v2jVh6nIL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Samsung Galaxy S24 FE 5G AI Smartphone (Mint, 8GB RAM, 128GB Storage)",
