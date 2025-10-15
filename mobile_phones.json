@@ -1063,7 +1063,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/71Q+ZPgDVKL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/71uFitJl3WL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/717Q2swzhBL._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/71-OdVpJE+L._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/71-OdVpJE+L._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Apple iPhone 15 (256 GB) - Pink",
