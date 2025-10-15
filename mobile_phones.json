@@ -1202,7 +1202,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/5154jDYzzkL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/414coi+reML._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/61OtOTTpzxL._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/51b3Qdn4pCL._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/51b3Qdn4pCL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Vivo T4x 5G (Marine Blue, 128 GB) (6 GB RAM)",
