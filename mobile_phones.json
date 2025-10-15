@@ -1225,7 +1225,8 @@
         "image_url_1": "https://m.media-amazon.com/images/I/61wL8Qbo0HL._SX679_.jpg",
         "image_url_2": "https://m.media-amazon.com/images/I/61s2yv9qBrL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/61zZATvUU2L._SX679_.jpg",
-        "image_url_4": "https://m.media-amazon.com/images/I/71Vdww6kzhL._SX679_.jpg"
+        "image_url_4": "https://m.media-amazon.com/images/I/71Vdww6kzhL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "POCO C71, Desert Gold (6GB, 128GB)",
