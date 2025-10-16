@@ -1391,7 +1391,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/51XgUwdS8sL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/51rd6SofafL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/41OO19JhnGL._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/61qKkGW41SL._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/61qKkGW41SL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Samsung Galaxy Z Fold6 5G Smartphone with Galaxy AI (Silver Shadow, 12GB RAM, 256GB Storage), 50MP High-Resolution Camera, Snapdragon 8 Gen 3, Google Gemini",
