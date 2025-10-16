@@ -1320,7 +1320,8 @@
         "product_price": "16,965",
         "product_url": "https://www.amazon.in/Oppo-Prism-Black-128GB-Storage/dp/B0F8W2D943/ref=sr_1_124?dib=eyJ2IjoiMSJ9.K2u5dMlXnu6Pl70Q-QAJV-vCQ0jm-TwbnXWNo5PZWHbsPHvizEpuYwQDND04CFc42TZbhGPM91tbqTE3XdKHLWMiq-QduRcytp3HmjUAt-hTw0SqtzSAZi7dspnER1-ViyMnbZ3dXkNwu_mRbJ53O5NxKnb0jf0jf-BxB9X3ZasUZc3nihHsEw50ieATy9-CBQAjFD9Pu2K4QXVsubs-_pJX3vE1ZrxmJYc-x9bQ8m5fDcXBya94BRaPBaZAlt2vYcrB8ruEuOalJeoGEXfkYSzTZK17oU79Zu_4fWRiSiY.iLjV6ncpOaQJ1ETv9WBdHc12NnvcNGsoD4aiX7nTFnM&dib_tag=se&qid=1759572370&s=electronics&sr=1-124",
         "product_details": "<p>8 GB RAM | 128 GB ROM</p>\n<p>16.94 cm (6.67 inch) Display</p>\n<p>50MP + 2MP | 16MP Front Camera</p>\n<p>7000 mAh Battery</p>\n<p>Snapdragon 6 Gen 4 Processor</p>\n<p>80W SUPERVOOC Charger</p>",
-        "image_url_1": "https://m.media-amazon.com/images/I/51N3r9B6anL._SX679_.jpg"
+        "image_url_1": "https://m.media-amazon.com/images/I/51N3r9B6anL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Vivo T4 Lite 5G Titanium Gold_128GB+6GB",
