@@ -1367,7 +1367,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/71+JazMDXhL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/71gpbR+XaaL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/81UKdDyx9yL._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/71CbkpYH50L._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/71CbkpYH50L._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "OnePlus 13R | Smarter with OnePlus AI | Lifetime Display Warranty (16GB RAM, 512GB Storage Nebula Noir)",
