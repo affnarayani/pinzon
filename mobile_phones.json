@@ -1312,7 +1312,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/71GGXkl-yPL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/81wokOJjqoL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/61jWmBo+J0L._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/61ryS5MQEnL._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/61ryS5MQEnL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Oppo K13 5G (Prism Black, 8GB RAM 128GB Storage)",
