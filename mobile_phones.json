@@ -1511,7 +1511,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/61bsMyt0pFL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/81iRqI5U2SL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/51eV4AI9TvL._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/51KmV7CSCOL._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/51KmV7CSCOL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "CMF Phone 2 Pro 5G (Light Green, 8GB RAM, 128GB Storage)",
