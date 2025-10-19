@@ -1415,7 +1415,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/71futxDbi5L._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/812OvmyYPmL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/71TWHLiHe3L._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/81H+bEbl2cL._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/81H+bEbl2cL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "POCO M6 Plus 5G Graphite Black 8GB RAM 128GB ROM",
