@@ -1475,7 +1475,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/51GfPSgVPAL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/613QG2pV3iL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/511Z8+cP7EL._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/51DumL+IPqL._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/51DumL+IPqL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "POCO M6 Plus 5G Ice Silver 8GB RAM 128GB ROM",
