@@ -1630,7 +1630,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/513VYBCoQJL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/31M5TyC48HL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/410CcfCrtRL._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/51JF6aannbL._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/51JF6aannbL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "POCO M7 5G, Ocean Blue (8GB, 128GB)",
