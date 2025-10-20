@@ -1750,7 +1750,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/710lM98WnzL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/61FfVWSqGrL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/918vZ8+EQAL._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/71c122TMKwL._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/71c122TMKwL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "OnePlus 13R | Smarter with OnePlus AI | Lifetime Display Warranty (16GB RAM, 512GB Storage Astral Trail)",
