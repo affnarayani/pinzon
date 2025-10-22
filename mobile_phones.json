@@ -2179,7 +2179,8 @@
         "image_url_1": "https://m.media-amazon.com/images/I/61tyu7jSXSL._SX679_.jpg",
         "image_url_2": "https://m.media-amazon.com/images/I/816Kcy590NL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/519sH3wy66L._SX679_.jpg",
-        "image_url_4": "https://m.media-amazon.com/images/I/617osfJUZCL._SX679_.jpg"
+        "image_url_4": "https://m.media-amazon.com/images/I/617osfJUZCL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Nothing Phone (2a) Plus (Grey, 8GB RAM, 256GB Storage) | Up to 16GB RAM | Dimensity 7350 Pro 5G Processor | 50MP + 50MP | 50MP Front Camera | 6.7\" AMOLED Display | 56 Minutes Charge of 100%",
