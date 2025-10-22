@@ -2019,7 +2019,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/81HbJUdmSpL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/81c1k0Uug0L._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/716XIwp2ENL._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/61IdzlYUjEL._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/61IdzlYUjEL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Samsung Galaxy S24 FE 5G AI Smartphone (Blue, 8GB RAM, 128GB Storage)",
