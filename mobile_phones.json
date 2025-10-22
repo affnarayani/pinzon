@@ -2144,7 +2144,8 @@
         "product_price": "16,235",
         "product_url": "https://www.amazon.in/Moto-G85-128GB-Olive-Green/dp/B0D9GM15RC/ref=sr_1_213?dib=eyJ2IjoiMSJ9.R1ovh8TYdwJWjMRh-ylBwqfUVwx7g2QKtoDEDo6ywLEyOlaldlAi0yD3cBJMWDG5LTNgVPohN5m7g743Bk_scHYR5vmxGjg9OdyPG4BtbyQwHRl_luQW2JCPhm2JrQWlHVadn1RBfZYkycd9Cb9DzQka3LCQaOaNrBsBFwslMCRcs0891MsB0m74pPnLX0t81gnStcnMmpamCTPbCwxgwyP20ZtXCCzcr3Num3mXRDCNoo-6kkL-MN-tFf22qk06rG7Hnp5Nr4t8ytyCbPvXS3PGdN72oJ-2n8RmBAODoc4.HlDL6orSG24HCvWg_nrZTiQCwKo5c8G8GTEu_824Yw4&dib_tag=se&qid=1759572408&s=electronics&sr=1-213",
         "product_details": "<p>Front Camera</p>",
-        "image_url_1": "https://m.media-amazon.com/images/I/71GzV8nSEbL._SX679_.jpg"
+        "image_url_1": "https://m.media-amazon.com/images/I/71GzV8nSEbL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Redmi 15 5G Midnight Black 6GB + 128GB | Segment's Largest 7000mAhA Battery | Segment's Largest Display 17.53cm(6.9) Up to 144Hz | Snapdragon 6s Gen 3 | 18W Reverse Charging | 50MP AI Dual Camera",
