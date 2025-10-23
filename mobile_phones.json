@@ -2247,7 +2247,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/71pms43ZsaL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/61nNWReFZgL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/71ceEkr+QQL._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/81D1T0elBmL._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/81D1T0elBmL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Vivo T4 Lite 5G Prism Blue_128GB+4GB",
