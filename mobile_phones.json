@@ -2270,7 +2270,8 @@
         "image_url_1": "https://m.media-amazon.com/images/I/4127pxUDQqL._SX679_.jpg",
         "image_url_2": "https://m.media-amazon.com/images/I/21KJUVv59YL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/31DWIUqtS4L._SX679_.jpg",
-        "image_url_4": "https://m.media-amazon.com/images/I/41fx5PPoSVL._SX679_.jpg"
+        "image_url_4": "https://m.media-amazon.com/images/I/41fx5PPoSVL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Motorola G86 Power 5G (Pantone Golden Cypres, 8GB RAM, 128GB Storage) | 6.7\" 1.5K pOLED Display | 50MP Sony OIS Camera | 6720mAh Battery | TurboPower 33W Charging | Dimensity 7400 Processor",
