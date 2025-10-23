@@ -2281,7 +2281,8 @@
         "image_url_1": "https://m.media-amazon.com/images/I/516OBPGnZTL._SX679_.jpg",
         "image_url_2": "https://m.media-amazon.com/images/I/71qDv4ICijL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/617ik1TDaaL._SX679_.jpg",
-        "image_url_4": "https://m.media-amazon.com/images/I/41JrKQzppPL._SX679_.jpg"
+        "image_url_4": "https://m.media-amazon.com/images/I/41JrKQzppPL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Lava Storm Lite 5G (Astral Blue, 4+4*GB RAM, 128GB Storage) | India's First MTK Dimensity 6400 Processor | 50MP AI Camera | IP64 Rated | 120 Hz Display | 5000mAh Battery | Supports All 5G Bands",
