@@ -2519,7 +2519,8 @@
         "product_details": "<p>120Hz pOLED display</p>",
         "image_url_1": "https://m.media-amazon.com/images/I/61YBSWsf7zL._SX679_.jpg",
         "image_url_2": "https://m.media-amazon.com/images/I/61P-U6jm8FL._SX679_.jpg",
-        "image_url_3": "https://m.media-amazon.com/images/I/31nCwt2bW2L._SX679_.jpg"
+        "image_url_3": "https://m.media-amazon.com/images/I/31nCwt2bW2L._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Nothing Phone (3A) 5G (Black, 8GB RAM, 256GB Storage) | Snapdragon 7s Gen 3 | 50MP+50MP+8MP Cameras | 32MP Front | 6.77” 120Hz AMOLED | 5000mAh Battery | 50W Fast Charging | Up to 16GB RAM Expansion",
