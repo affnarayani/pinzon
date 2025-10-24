@@ -2509,7 +2509,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/714GaXJHGGL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/61UtC0akfYL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/61INFILwniL._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/81UZrN9A1kL._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/81UZrN9A1kL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Motorola Edge 60 Fusion (8GB RAM, 256GB Storage)",
