@@ -2445,7 +2445,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/61K1-+EUDXL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/81Ekyp3PgyL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/81vKtJQkreL._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/71wEvdzjMuL._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/71wEvdzjMuL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Redmi A3X Ocean Green 4GB RAM 128GB ROM",
