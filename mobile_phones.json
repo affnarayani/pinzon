@@ -2465,7 +2465,8 @@
         "product_price": "15,789",
         "product_url": "https://www.amazon.in/Moto-G85-128-Cobalt-Blue/dp/B0D9LS6MVV/ref=sr_1_254?dib=eyJ2IjoiMSJ9.NBL7btVvmmGrapVgjNQMC-ZobP9UNBQEZc2QznQZObpDAdUw7vziUTTroCnBZeASYEZAVvyTvbrvMEsamfc9OSEVV6aP_qSLmiQzQPrzHwEXKzY9u60KyzCz0jb0xmqasmFyMKTmnN8i-EaVLQysvG7fMcVf_WPSNju2Mc9Ce55wGu9bZ3Aij_e7oi1TmpsTySr789BChlpGwUBcA8DasuysOHqOF05ojaFA7gDZS_KDHfg-wss4iykkFe73qbBKnSDC6SrpGrf628X6vBqHSlnVkSps0K3pnSrxvj4hnK4.ykkYbIYVfvTD9cjxxH8Fp36gsziL7JCwqFSuUhubya0&dib_tag=se&qid=1759572432&s=electronics&sr=1-254",
         "product_details": "<p>Front Camera</p>\n<p>Gorilla Glass</p>\n<p>Camera</p>",
-        "image_url_1": "https://m.media-amazon.com/images/I/71kvfdqzj2L._SX679_.jpg"
+        "image_url_1": "https://m.media-amazon.com/images/I/71kvfdqzj2L._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Motorola All-New A50 Dual Sim keypad Phone (with Voice Feature) | 1750 mAh Powerful Battery | 2 Years Replacement Warrenty| Rear Camera (Dark Blue)",
