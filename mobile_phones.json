@@ -2497,7 +2497,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/71H-3o5e22L._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/61-SyO-EysL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/71zEdhWDIxL._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/71QQhS0ItSL._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/71QQhS0ItSL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Redmi A3X Midnight Black 4GB RAM 128GB ROM",
