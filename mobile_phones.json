@@ -2602,7 +2602,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/718lKdf3BML._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/61naefYjIEL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/61mg0y62+aL._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/71WUCRAC2YL._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/71WUCRAC2YL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Redmi Note 14 SE 5G, Mystique White (6GB, 128GB)",
