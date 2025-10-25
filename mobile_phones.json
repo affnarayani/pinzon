@@ -2781,7 +2781,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/81H47qwGSUL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/819bzlRJ2CL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/81leW1XWY+L._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/71lv+JNPsaL._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/71lv+JNPsaL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Redmi Note 14 SE 5G, Titan Black (6GB, 128GB)",
