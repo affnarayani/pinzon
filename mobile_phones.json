@@ -2801,7 +2801,8 @@
         "product_price": "21,999",
         "product_url": "https://www.amazon.in/POCO-F6-12gb-256gb-Deadpool/dp/B0FGPXDTHL/ref=sr_1_297?dib=eyJ2IjoiMSJ9.1onBVVtnQoIJGXVpbdpiZyGmbFSgEvvXzWhbh3aLqT-W0uXIMqMWMtK2D-yYaByJKQj45hJVpcjrKUhuoryVLOE9WJWQ5BX6HUh4FD9KhSHQwr0n8aGFO7KZWaxSr-81PHg_hWhxuzBvtRm5UzDSEpbor-huudjwUmiU46FjEwbTKFfpYKf77jHHPj8HgFxeuhF97RvUTxGLBeXIfUvgWaocxk7jBHQt6a_RHrzBxmNt1dWNemIqfmQneAa9S_bIrD8KzIEtCvRHtdvSTQjFLQuwLm0vstrUALc_tGNfvXg.Kco-t12LJi8Fx6n2zYeGBcIl9iOFr5oUc689Wa-Nl3E&dib_tag=se&qid=1759572460&s=electronics&sr=1-297",
         "product_details": "<p>12 GB RAM | 256 GB ROM</p>\n<p>16.94 cm (6.67 inch) Display</p>\n<p>50MP (OIS) + 8MP | 20MP Front Camera</p>\n<p>5000 mAh Battery</p>\n<p>8s Gen3 Processor</p>",
-        "image_url_1": "https://m.media-amazon.com/images/I/61UxqeFM70L._SX679_.jpg"
+        "image_url_1": "https://m.media-amazon.com/images/I/61UxqeFM70L._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "Lava Bold N1 (Radiant Black, 4 GB RAM, 64 GB Storage) | 6.75\" (90 Hz) HD+ Display | 13MP AI Dual Rear Camera | 5000 mAh Battery | Secure Face Unlock | Fingerprint Reader | Charger & Phone-Case in Box",
