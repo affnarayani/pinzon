@@ -2793,7 +2793,8 @@
         "image_url_2": "https://m.media-amazon.com/images/I/51t8pVhXaeL._SX679_.jpg",
         "image_url_3": "https://m.media-amazon.com/images/I/61awC9bHUsL._SX679_.jpg",
         "image_url_4": "https://m.media-amazon.com/images/I/61-CrUW0y0L._SX679_.jpg",
-        "image_url_5": "https://m.media-amazon.com/images/I/61j+rxs+twL._SX679_.jpg"
+        "image_url_5": "https://m.media-amazon.com/images/I/61j+rxs+twL._SX679_.jpg",
+        "published": true
     },
     {
         "product_name": "POCO F6 12gb 256gb Deadpool Edition",
